@@ -1,0 +1,20 @@
+@import "./bootstrap/bootstrap-reboot.scss";
+@import "./bootstrap/bootstrap-grid.scss";
+@import "./utils/icon";
+@import "./variables";
+@import "./fonts";
+@import "./base";
+@import "./utils/mixin";
+@import "./utils/helpers";
+
+// Components
+@import "./components/menu";
+@import "./components/slider";
+@import "./components/tag";
+@import "./components/contentCard";
+@import "./components/cards";
+@import "./components/footer";
+@import "./components/button";
+@import "./components/video";
+@import "./components/inputs";
+@import "./components/coinVote";

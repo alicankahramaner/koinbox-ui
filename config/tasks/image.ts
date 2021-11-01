@@ -9,6 +9,7 @@ export const Image: ITask = {
     src: ['resources', 'images'],
     dest: ['resources', 'images'],
     extention: ['*.*'],
+    isWatch: true,
     callBack(cb: any) {
         src(this.src)
             .pipe(image().on('error', ErrorHandler))

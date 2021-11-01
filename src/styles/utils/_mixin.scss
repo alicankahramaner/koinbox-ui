@@ -1,0 +1,12 @@
+@mixin absoluteFlag() {
+    content: " ";
+    width: 4px;
+    border-radius: 12px;
+    background-color: #3772ff;
+    height: 40%;
+    position: absolute;
+    display: block;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+}

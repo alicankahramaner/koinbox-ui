@@ -1,0 +1,106 @@
+.btn {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px;
+    background-color: $white;
+    width: unset;
+    border-radius: $input-radius;
+    color: $btn-foreground;
+    font-weight: 500;
+    border: 2px solid transparent;
+    font-size: 16px;
+    transition: all ease-in-out 0.3s;
+    position: relative;
+
+    &:hover {
+        color: $btn-foreground;
+        border-color: $brand-blue;
+    }
+
+    &::before {
+        @include absoluteFlag();
+    }
+
+    [class*="icon-"] {
+        margin-right: 10px;
+    }
+
+    &.ghost {
+        background-color: unset;
+        padding: 0;
+        border: unset;
+        &::before {
+            content: unset;
+        }
+    }
+
+    &.form {
+        background: none;
+        border: 2px solid #dddfe2;
+        padding: 7px;
+        margin: 0px 3px;
+        border-radius: 8px;
+        &::before {
+            content: unset;
+        }
+
+        [class*="icon"] {
+            margin: 0;
+        }
+    }
+
+    &.approve,
+    &.decline {
+        padding: 12px 0px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 16px;
+        margin: 0px 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.approve {
+        background-color: #c1f1d5;
+        color: #32d176;
+        &:hover {
+            border-color: #32d176;
+        }
+        &::before {
+            content: none;
+        }
+    }
+
+    &.decline {
+        background-color: #ffcfc3;
+        color: #ff6037;
+        &:hover {
+            border-color: #ff6037;
+        }
+        &::before {
+            content: none;
+        }
+    }
+
+    &.filter-btn {
+        // 3772FF
+        padding: 5px 17px;
+        color: #898f99;
+        border: 2px solid #dddfe2;
+        background-color: unset;
+        font-size: 16px;
+        font-weight: 500;
+        &::before {
+            content: none;
+        }
+
+        &.active,
+        &:hover {
+            color: $white;
+            background-color: #3772ff;
+            border-color: #3772ff;
+        }
+    }
+}

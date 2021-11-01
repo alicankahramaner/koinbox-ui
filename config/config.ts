@@ -45,8 +45,8 @@ const dev: IConfigSettings = {
 
 const prod: IConfigSettings = {
     styles: {
-        minify: false,
-        sourcemaps: false
+        minify: true,
+        sourcemaps: true
     },
     scripts: {
 

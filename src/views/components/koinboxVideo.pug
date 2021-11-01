@@ -1,0 +1,13 @@
+<!-- KoinboxTV:Start -->
+.content-card 
+    .content-card-header
+        h2.title Koinbox TV
+
+        .content-card-header-actions
+            - var btnClass = "ghost"
+            - var btnText = "Tüm Videolar"
+            - var btnIcon = null
+            include button.pug
+    .content-card-body
+        include videoList.pug
+<!-- KoinboxTV:End -->

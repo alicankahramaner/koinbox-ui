@@ -1,0 +1,93 @@
+.search-area {
+    background-color: #f2f3f4;
+    padding: 16px;
+    border: 2px solid #dddfe2;
+    border-radius: 24px;
+    margin-bottom: 25px;
+}
+.select {
+    display: flex;
+    padding: 9px 16px;
+    border: 2px solid #dddfe2;
+    background-color: #f2f3f4;
+    border-radius: 8px;
+    position: relative;
+    justify-content: flex-end;
+    select {
+        appearance: none;
+        outline: none;
+        box-shadow: none;
+        width: 100%;
+        border: none;
+        background: none;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        text-indent: 16px;
+        z-index: 1;
+        font-size: 12px;
+        color: #898f99;
+    }
+
+    &:after {
+        @include sprite($icon-arrow-square-down);
+        display: block;
+        content: "";
+    }
+}
+
+input {
+    background-color: #f2f3f4;
+    padding: 16px;
+    border: 2px solid #dddfe2;
+    border-radius: 8px;
+    height: 30px;
+    font-size: 12px;
+    color: #898f99;
+}
+
+.progress {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    background-color: #c3d4ff;
+    &:after {
+        content: " ";
+        display: block;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #3772ff;
+        transition: all ease-in-out 0.3s;
+    }
+    @for $size from 100 through 1 {
+        &[data-val="#{$size}"] {
+            &:after {
+                width: round(percentage($size/100));
+            }
+        }
+    }
+}
+
+.filter-area {
+    margin-top: 55px;
+    &-filters {
+        margin-bottom: 15px;
+        .btn {
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &-body {
+        .card {
+            flex-basis: 30%;
+            margin: 12px;
+        }
+    }
+}

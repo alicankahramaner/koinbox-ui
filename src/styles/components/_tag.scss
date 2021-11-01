@@ -1,0 +1,109 @@
+.tag {
+    font-weight: 500;
+    font-size: 12px;
+    color: $white;
+    line-height: 12px;
+    background-color: #3772ff;
+    border-radius: 10px;
+    padding: 5px 9px;
+    display: inline-block;
+    margin: 4px;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+        color: $white;
+        background-color: #18203f !important;
+    }
+
+    &-btn {
+        padding: 24px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        flex-basis: 100%;
+        flex: 0 1 auto;
+        margin: 12px 15px;
+        width: 270px;
+        height: 156px;
+        border-radius: 22px;
+        background-color: $white;
+        border: 2px solid transparent;
+        transition: all ease-in-out 0.3s;
+        color: #18203f;
+
+        .logo {
+            padding: 25px;
+            border-radius: 100%;
+            width: 74px;
+            height: 74px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+            transition: all ease-in-out 0.3s;
+        }
+
+        & > span {
+            &:last-child {
+                width: 100%;
+                flex-basis: 1;
+                display: block;
+                font-size: 18px;
+                color: inherit;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+
+        // Variants
+
+        &.blue {
+            .logo {
+                background-color: #c3d4ff;
+            }
+        }
+        &.green {
+            .logo {
+                background-color: #c1f1d5;
+            }
+        }
+        &.yellow {
+            .logo {
+                background-color: #ffe6c3;
+            }
+        }
+        &.orange {
+            .logo {
+                background-color: #ffcfc3;
+            }
+        }
+        &.pink {
+            .logo {
+                background-color: #f6d7ff;
+            }
+        }
+        &.purple {
+            .logo {
+                background-color: #e1d7ff;
+            }
+        }
+
+        &:hover {
+            border-color: #ffaf37;
+            background-color: #ffe6c3;
+            color: #ffaf37;
+            .logo {
+                background-color: $white;
+            }
+        }
+    }
+
+    &.passive {
+        background-color: #f2f3f4;
+        font-weight: 500;
+        font-size: 14px;
+        color: #898f99;
+    }
+}

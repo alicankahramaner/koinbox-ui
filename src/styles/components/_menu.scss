@@ -1,0 +1,55 @@
+.menu {
+    padding: 34px 30px;
+    background-color: $white;
+    border-radius: $border-radius;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 23px;
+        align-items: center;
+        figure {
+            margin: 0;
+        }
+
+        button {
+            padding: 0px;
+            margin: 0px;
+            background: none;
+            border: none;
+            display: inline-flex;
+        }
+    }
+
+    .search-form {
+        display: flex;
+        margin-bottom: 24px;
+        position: relative;
+
+        input[type="text"] {
+            width: 100%;
+            border-radius: $input-radius;
+            border: 2px solid #f2f3f4;
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+            color: #898f99;
+            font-weight: 500;
+            font-family: "Inter";
+            text-indent: 15px;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding:0px 16px;
+            background: none;
+            border:unset;
+            height: 100%;
+        }
+    }
+}

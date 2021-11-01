@@ -1,0 +1,26 @@
+.flex-justify {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.content-right{
+    text-align: right;
+}
+
+.content-center{
+    text-align: center;
+}
+
+.content-left{
+    text-align: right;
+}
+
+.show{
+    display: block!important;
+}
+
+.hide{
+    display: none!important;
+    
+}

@@ -1,0 +1,211 @@
+.card {
+    border-radius: $border-radius;
+    background-color: $white;
+    padding: 30px 23px;
+    display: flex;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    text-decoration: none;
+
+    &-row {
+        margin-top: 48px;
+        margin-bottom: 67px;
+        display: flex;
+    }
+
+    &-content {
+        flex-shrink: 1;
+        padding-right: 16px;
+    }
+
+    &:not(.big) {
+        margin: 12px 0px;
+        border: 2px solid transparent;
+        max-height: 184px;
+        a {
+            text-decoration: none;
+            display: flex;
+        }
+        &:before {
+            @include absoluteFlag();
+        }
+
+        &:hover {
+            border-color: #3772ff;
+        }
+    }
+
+    header {
+        .card-title {
+            padding: 0;
+            font-weight: 600;
+            font-size: 18px;
+            color: #18203f;
+            margin: 0;
+            line-height: 19px;
+        }
+    }
+
+    &-info {
+        font-size: 12px;
+        font-weight: normal;
+        color: #a9abb0;
+        padding: 8px 0px;
+        display: block;
+
+        .cat {
+            margin-right: 16px;
+        }
+
+        .author {
+            float: right;
+        }
+    }
+
+    figure {
+        margin: 0px;
+        border-radius: 24px;
+        overflow: hidden;
+        height: 136px;
+        width: 136px;
+        flex-shrink: 0;
+        flex-basis: 136px;
+        position: relative;
+        img {
+            width: 136px;
+            object-fit: cover;
+        }
+        .tags {
+            position: absolute;
+            display: inline-flex;
+            bottom: 16px;
+            right: 16px;
+        }
+    }
+
+    article {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #898f99;
+        line-height: 24px;
+    }
+
+    nav {
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            color: #3772ff;
+        }
+    }
+
+    // Big
+    &.big:not(.space) {
+        min-height: 638px;
+        display: block;
+        .card-title {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        figure {
+            height: 300px;
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+
+        article {
+            margin-bottom: 16px;
+        }
+    }
+
+    // Editor
+    &.editor {
+        &:not(.big) {
+            &:before {
+                background-color: #ffaf37;
+            }
+            &:hover {
+                border-color: #ffaf37;
+            }
+
+            figure {
+                position: relative;
+                .star {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    content: "";
+                    top: 16px;
+                    right: 16px;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 12px;
+                    background-color: #ffefd7;
+                }
+
+                &::before {
+                    background-color: #ffaf37;
+                }
+            }
+
+            .tag {
+                background-color: #ffaf37;
+            }
+        }
+    }
+    // Space
+    &.space {
+        background-color: unset;
+        font-size: 14px;
+        color: #18203f;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: unset;
+        padding: 0;
+        line-height: 24px;
+        border: unset;
+
+        figure {
+            width: auto;
+            flex-basis: 156px;
+            margin-bottom: 24px;
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+
+            &::before {
+                @include absoluteFlag();
+            }
+        }
+        &::before {
+            content: unset;
+        }
+
+        // Big
+        &.big {
+            .card-title {
+                font-size: 18px;
+                line-height: 21px;
+            }
+            figure {
+                flex-basis: 220px;
+            }
+        }
+    }
+    // Wide
+    &.wide {
+        figure {
+            flex-basis: 270px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

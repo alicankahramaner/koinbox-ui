@@ -1,0 +1,31 @@
+mixin tagButton(text,iconName,variant)
+    a(class="tag-btn "+variant href="#")
+        span.logo
+            span(class="icon-"+iconName)
+        span= text
+mixin select(placeholder)
+    .select 
+        select(name="") 
+            option(value="1") #{placeholder}
+mixin button(label,icon,className)
+    a(href="#" class="btn " + className) 
+        if(icon)
+            span(class="icon-"+icon)
+        if(label)
+            span #{label}
+mixin tag(title,className)
+    span(class="tag "+className) #{title}
+
+mixin filterCard(tag)
+    a(href="#" class="card space big  "+tag)
+        figure 
+            img(src="https://loremflickr.com/270/270?grayscale")
+            .tags
+                include components/tag.pug
+        header 
+            h2.card-title Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        .card-info 
+            span.cat Bitcoin 
+            span.date 14 Saat Önce
+            span.author Fatih Sezer 
+        p XRP, 3 Aylık Düşüş Trendi Kırıldı 1 Dolar veya Daha Fazlasını Yolda PrimeXBT Analisti: Kim Chua

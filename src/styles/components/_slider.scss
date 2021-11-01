@@ -1,0 +1,62 @@
+.slider {
+    overflow: hidden;
+    display: flex;
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: 23px 16px;
+    position: relative;
+    margin-bottom: 15px;
+    justify-content: center;
+    align-items: center;
+    &::after,
+    &::before {
+        display: block;
+        content: " ";
+        background: $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        box-shadow: $white 0px 0px 10px 6px;
+    }
+
+    &:after {
+        right: 0;
+        left: unset;
+    }
+
+    &-wrapper {
+        display: flex;
+        position: absolute;
+        left: 0;
+        padding: 0px 16px;
+        transition: all ease-in-out 1s;
+    }
+
+    &-item {
+        display: inline-flex;
+        flex: 1 0 auto;
+        float: left;
+        color: #898f99;
+        font-size: 14px;
+
+        &:not(:last-child) {
+            &:after {
+                content: "-";
+                display: block;
+                margin: 0px 10px;
+            }
+        }
+
+        .rate {
+            color: $green;
+            font-weight: bold;
+            margin-left: 5px;
+
+            &.down {
+                color: $orange;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+include ../mixins.pug
+doctype html  
+html(lang='en')  
+    head
+        title= Title
+        link(rel='stylesheet' href='/styles/style.css')
+        script(src="https://code.jquery.com/jquery-3.6.0.slim.js") 
+        block headscript
+    body
+    .container
+        .row
+            include ./slider.pug
+            block content
+        block Script
+        script(src='/scripts/app.js')
+    footer.footer
+        .footer-up
+            .container
+                .row 
+                    .col-2 Col-2
+                    .col-3 Col-3 
+                    .col-2 Col-2 
+                    .col-3 Col-3
+                    .col-2 Col-2
+        .footer-down
+            .container
+                .row 
+                    .col-8 Col-8 
+                    .col-4 Col-4
+block side
