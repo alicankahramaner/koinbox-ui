@@ -1,0 +1,52 @@
+.list-post {
+    margin-bottom: 18px;
+    text-decoration: none;
+    display: block;
+    &-title {
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        font-size: 18px;
+        color: $brand-darkBlue;
+        line-height: 21px;
+        transition: all ease-in-out 0.3s;
+        margin-bottom: 16px;
+    }
+
+    .card-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+        padding: 0;
+    }
+
+    &:not(:last-child) {
+        border-bottom: 2px solid #e8eaec;
+    }
+
+    &:hover {
+        .list-post-title {
+            color: $brand-blue;
+        }
+    }
+
+    // Image
+    &.image {
+        display: flex;
+        padding-bottom:16px;
+        figure {
+            margin: 0px 16px 0px 0px;
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: $border-radius;
+                overflow: hidden;
+                display: block;
+                flex-basis: 96px;
+            }
+        }
+        .list-post-title {
+            flex-basis: 100%;
+        }
+    }
+}

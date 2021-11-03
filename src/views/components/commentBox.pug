@@ -1,0 +1,76 @@
+// CommentBox:Start
+.comment-box
+    .emoji-comment
+        span Haber Hakkında İfade Bırak
+        .emoji-list
+            a(href="javascript:;").emoji
+                span.circle
+                    span.icon-emoji-up 
+                span +999
+            a(href="javascript:;").emoji
+                span.circle
+                    span.icon-emoji-down 
+                span 14
+            a(href="javascript:;").emoji.selected
+                span.circle
+                    span.icon-emoji-bear
+                span 35
+            a(href="javascript:;").emoji
+                span.circle
+                    span.icon-emoji-bull
+                span 21
+            a(href="javascript:;").emoji
+                span.circle
+                    span.icon-emoji-rocket
+                span 4
+    .comments 
+        span 
+            | Yorumlar
+            span.count (5)
+        .writer
+            textarea(name="comment" cols="30" rows="10") 
+            .editor
+                button.bold.selected
+                    span.icon-font-bold
+                button.italic
+                    span.icon-font-italic
+        .comments-footer
+            .left
+                - var btnClass ="comment-more"
+                - var btnText = "Daha Az Yorum"
+                - var btnIcon = "icon-refresh"
+                include button.pug
+            .right 
+                - var btnClass ="ghost"
+                - var btnText = "İptal"
+                - var btnIcon = null
+                include button.pug
+                - var btnClass ="primary"
+                - var btnText = "Gönder"
+                - var btnIcon = null
+                include button.pug
+        span.h-line
+        .comments-list
+            ul 
+                li
+                    img(src="https://loremflickr.com/44/44" alt="")
+                    span.name A.Fatih Sezer
+                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis.
+                    ul
+                        li
+                            img(src="https://loremflickr.com/44/44" alt="")
+                            span.name A.Fatih Sezer
+                            span Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis.
+                li
+                    img(src="https://loremflickr.com/44/44" alt="")
+                    span.name A.Fatih Sezer
+                    span Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis.
+                    ul
+                        li
+                            img(src="https://loremflickr.com/44/44" alt="")
+                            span.name A.Fatih Sezer
+                            span Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis.
+
+
+
+// CommentBox:End

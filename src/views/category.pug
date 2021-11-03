@@ -1,0 +1,49 @@
+extends components/layout.pug 
+block content
+    .row
+        .col-12
+            include components/breadcrump.pug
+    .row
+        .col-9
+            // Card List
+            .card-list
+                include components/categoryCard.pug
+                include components/categoryCard.pug
+                include components/categoryCard.pug
+            // Haber Akışı
+            h2 Haber Akışı
+            include components/cardWideLarge.pug
+            include components/cardWideLarge.pug
+            include components/cardWideLarge.pug
+            include components/cardWideLarge.pug
+            include components/cardWideLarge.pug
+            // More Button
+            .row 
+                .col-12 
+                    - var btnClass ="more"
+                    - var btnText = "Daha Fazla Göster"
+                    - var btnIcon = "icon-refresh"
+                    include components/button.pug
+            .row
+                .col-12 
+                    h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+                .col-12
+                    h3 Kripto Para Nedir?
+                    .ghost-content
+                        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                    +button("Daha Fazla Göster","refresh")
+        .col-3
+            // Aside
+            include components/asideCard.pug
+            h3.aside-title Popüler İçerikler 
+            include components/listPost.pug
+            include components/listPost.pug
+            include components/listPost.pug
+            include components/listPost.pug
+            include components/listPost.pug
+            include components/listPost.pug
+            // Ads
+            img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
+            img(src="/resources/images/adsLong.png" alt="" class="img-responsive")

@@ -7,6 +7,16 @@
     transition: all ease-in-out 0.3s;
     text-decoration: none;
 
+    &-list {
+        .card {
+            margin-bottom: 24px;
+        }
+    }
+
+    a {
+        width: 100%;
+    }
+
     &-row {
         margin-top: 48px;
         margin-bottom: 67px;
@@ -207,5 +217,43 @@
                 width: 100%;
             }
         }
+
+        &.large {
+            max-height: unset;
+            figure {
+                flex-basis: 50%;
+                height: 300px;
+            }
+        }
+    }
+
+    // Category
+    &.category {
+        figure {
+            height: 400px !important;
+        }
+    }
+}
+
+// Aside Card
+.aside-card {
+    padding: 35px 24px;
+    background-color: $white;
+    border-radius: $border-radius;
+    margin-bottom: 64px;
+    &-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #18203f;
+        margin-bottom: 19px;
+    }
+
+    &-title-sub {
+        font-weight: 600;
+        font-size: 12px;
+        color: $brand-gray;
+        margin: 30px 0;
+        line-height: 12px;
+        display: block;
     }
 }

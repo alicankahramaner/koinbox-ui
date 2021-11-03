@@ -8,5 +8,6 @@
     display: block;
     left: 0;
     top:50%;
+    transition: all ease-in-out .3s;
     transform: translateY(-50%);
 }

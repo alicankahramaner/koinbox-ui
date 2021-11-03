@@ -4,6 +4,7 @@ import { Scripts } from './tasks/scripts';
 import { Image } from './tasks/image';
 import { SpriteSmith } from './tasks/spriteSmith';
 import { Font } from './tasks/font';
+import { IconFont } from './tasks/iconFont';
 
 const Tasks = [
     Styles,
@@ -11,7 +12,8 @@ const Tasks = [
     Scripts,
     Image,
     SpriteSmith,
-    Font
+    Font,
+    // IconFont
 ];
 
 export default Tasks;

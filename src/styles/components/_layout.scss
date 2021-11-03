@@ -1,0 +1,26 @@
+.layout {
+    width: 100%;
+    display: flex;
+    &-left {
+        flex-basis: 280px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        padding-left: 0.75rem;
+        padding-top: 24px;
+        transition: all ease-in-out 0.3s;
+    }
+
+    &-right {
+        padding: $body-padding;
+        flex-basis: 100%;
+    }
+}
+
+.menu-collapsed {
+    .layout {
+        &-left {
+            flex-basis: 120px;
+        }
+    }
+}

@@ -67,63 +67,86 @@ block content
           include components/spaceCardBig.pug
       .row
         .content-card 
+          .content-card-header
+            h2.title Etkinlinler
+            .content-card-header-actions
+              +button("Tüm Etkinlikler",null,"ghost")
+          .content-card-body
+            .row.search-area
+              .col-2
+                +select("Kategori")
+              .col-2
+                +select("Pozisyon")
+              .col-4.content-center
+                input(type="text" placeholder="Ara")
+              .col-2
+                +select("Sırala")
+              .col-2.content-right
+                +button(null,'arrow-square-right','form')
+                +button(null,'arrow-square-left','form')
+            .row
+              .col-4 
+                include components/coinVote.pug
+              .col-4 
+                include components/coinVote.pug
+              .col-4 
+                include components/coinVote.pug
+            .row
+              .filter-area
+                .filter-area-filters
+                  button(data-val="all").btn.borderred.primary.filter-btn.active Tümü
+                  button(data-val="coin").btn.borderred.primary.filter-btn Coin
+                  button(data-val="nft").btn.borderred.primary.filter-btn NFT
+                  button(data-val="token").btn.borderred.primary.filter-btn Token
+                  button(data-val="projects").btn.borderred.primary.filter-btn Projeler
+                .filter-area-body
+                  .row
+                    .col-4.filter-item.coin
+                      +filterCard('coin')
+                    .col-4.filter-item.nft
+                      +filterCard('nft')
+                    .col-4.filter-item.token
+                      +filterCard('token')
+                    .col-4.filter-item.coin
+                      +filterCard('coin')
+                    .col-4.filter-item.projects
+                      +filterCard('projects')
+                    .col-4.filter-item.token
+                      +filterCard('token')
+                    .col-4.filter-item.coin
+                      +filterCard('coin')
+                    .col-4.filter-item.coin
+                      +filterCard('coin')
+                    .col-4.filter-item.nft
+                      +filterCard('nft')
+      // Haber Akışı
+      .row
+        .col-12
+          .content-card 
             .content-card-header
-              h2.title Etkinlinler
-              .content-card-header-actions
-                +button("Tüm Etkinlikler",null,"ghost")
+              h2.title Haber Akışı
             .content-card-body
-              .row.search-area
-                .col-2
-                  +select("Kategori")
-                .col-2
-                  +select("Pozisyon")
-                .col-4.content-center
-                  input(type="text" placeholder="Ara")
-                .col-2
-                  +select("Sırala")
-                .col-2.content-right
-                  +button(null,'arrow-square-right','form')
-                  +button(null,'arrow-square-left','form')
-              .row
-                .col-4 
-                  include components/coinVote.pug
-                .col-4 
-                  include components/coinVote.pug
-                .col-4 
-                  include components/coinVote.pug
-              .row
-                .filter-area
-                  .filter-area-filters
-                      button(data-val="all").btn.borderred.primary.filter-btn.active Tümü
-                      button(data-val="coin").btn.borderred.primary.filter-btn Coin
-                      button(data-val="nft").btn.borderred.primary.filter-btn NFT
-                      button(data-val="token").btn.borderred.primary.filter-btn Token
-                      button(data-val="projects").btn.borderred.primary.filter-btn Projeler
-                  .filter-area-body
-                    .row
-                      .col-4.filter-item.coin
-                        +filterCard('coin')
-                      .col-4.filter-item.nft
-                        +filterCard('nft')
-                      .col-4.filter-item.token
-                        +filterCard('token')
-                      .col-4.filter-item.coin
-                        +filterCard('coin')
-                      .col-4.filter-item.projects
-                        +filterCard('projects')
-                      .col-4.filter-item.token
-                        +filterCard('token')
-                      .col-4.filter-item.coin
-                        +filterCard('coin')
-                      .col-4.filter-item.coin
-                        +filterCard('coin')
-                      .col-4.filter-item.nft
-                        +filterCard('nft')
-
+              include components/cardWideLarge.pug
+              include components/cardWideLarge.pug
+              include components/cardWideLarge.pug
+              include components/cardWideLarge.pug
+              include components/cardWideLarge.pug
+              include components/cardWideLarge.pug
+              +button("Daha Fazla Göster","refresh")
+      .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")
     // Ads Side
-    .col-3 
-      img(src="/resources/images/adsBox.png" alt="")
-      img(src="/resources/images/adsLong.png" alt="")
+    .col-3
+      img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
+      img(src="/resources/images/adsLong.png" alt="" class="img-responsive")
 //- block side
 //-   .row
 //-     .col-12 side

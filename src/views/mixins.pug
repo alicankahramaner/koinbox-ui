@@ -29,3 +29,8 @@ mixin filterCard(tag)
             span.date 14 Saat Önce
             span.author Fatih Sezer 
         p XRP, 3 Aylık Düşüş Trendi Kırıldı 1 Dolar veya Daha Fazlasını Yolda PrimeXBT Analisti: Kim Chua
+mixin badge(icon,text)
+    .badge
+        if(icon)
+            span(class="icon-"+icon)
+        span= text

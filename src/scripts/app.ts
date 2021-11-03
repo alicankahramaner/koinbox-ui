@@ -96,8 +96,27 @@ class FilterArea implements ModuleType {
     }
 }
 
+class MenuDropdown implements ModuleType {
+    selector: string;
+    constructor() {
+        this.selector = '#main-menu';
+    }
+
+    init() {
+        let parentLi = document.querySelectorAll(`${this.selector} li.sub > a`);
+        parentLi.forEach(item => item.addEventListener('click', this.onClick.bind(this)))
+    }
+
+    onClick(e: any) {
+        let currentLink: HTMLLinkElement = e.target;
+        document.querySelectorAll(`${this.selector} li.sub`).forEach(e => e.classList.remove('show'));
+        setTimeout(()=> currentLink.closest('li.sub').classList.add('show'),150)
+    }
+}
+
 // Init App
 const app = new App([
     new MenuCollapseModule(),
-    new FilterArea()
+    new FilterArea(),
+    new MenuDropdown()
 ])

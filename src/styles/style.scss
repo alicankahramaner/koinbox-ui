@@ -3,9 +3,9 @@
 @import "./utils/icon";
 @import "./variables";
 @import "./fonts";
-@import "./base";
 @import "./utils/mixin";
 @import "./utils/helpers";
+@import "./base";
 
 // Components
 @import "./components/menu";
@@ -18,3 +18,7 @@
 @import "./components/video";
 @import "./components/inputs";
 @import "./components/coinVote";
+@import "./components/breadcrump";
+@import "./components/listPost";
+@import "./components/layout";
+@import "./components/smallComponents";

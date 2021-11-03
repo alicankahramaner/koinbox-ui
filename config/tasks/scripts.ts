@@ -13,11 +13,11 @@ export const Scripts: ITask = {
     src: ['scripts'],
     dest: ['scripts'],
     extention: ['*.ts'],
-    isWatch:true,
+    isWatch: true,
     callBack(cb: any) {
         src(this.src)
             .pipe(tsProject().on('error', ErrorHandler))
-            .pipe(gulpif(!Config.isProd, uglify() ))
+            .pipe(gulpif(!Config.isProd, uglify()))
             .pipe(dest(this.dest))
         cb();
     }
