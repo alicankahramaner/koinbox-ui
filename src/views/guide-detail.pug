@@ -76,6 +76,10 @@ block content
                 p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
                 p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
             +button("Daha Fazla Göster","refresh")
+block append Side
+    include components/sideShare.pug
+    include components/sideSettings.pug
+    include components/sideIndex.pug
 
-    block prepend Script 
-        script(src="/resources/vendor/rSlider.min.js")
+block prepend Script 
+    script(src="/resources/vendor/rSlider.min.js")

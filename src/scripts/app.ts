@@ -132,7 +132,7 @@ class InputRange implements ModuleType {
     create(item: any) {
         var slider2 = new (window as any).rSlider({
             target: item,
-            values: ['1dk','3dk','5dk','10dk','15dk','20dk','25dk','+30dk'],
+            values: ['1dk', '3dk', '5dk', '10dk', '15dk', '20dk', '25dk', '+30dk'],
             range: false,
             set: ['5dk'],
             tooltip: false,
@@ -143,10 +143,35 @@ class InputRange implements ModuleType {
     }
 }
 
+class ActiveToggle implements ModuleType {
+    selector: string = '.active-toggle';
+
+    init() {
+        document.querySelectorAll(this.selector).forEach(item => {
+            item.addEventListener('click', this.onClick.bind(this))
+        })
+    }
+
+    onClick(e: HTMLElement | any) {
+        let item: HTMLElement = e.target;
+        if (!item.className.includes(this.selector)) {
+            item = item.closest(this.selector);
+        }
+
+        if (item.dataset.target) {
+            item = item.closest(item.dataset.target);
+        }
+
+        item.classList.toggle('active');
+    }
+
+}
+
 // Init App
 const app = new App([
     new MenuCollapseModule(),
     new FilterArea(),
     new MenuDropdown(),
-    new InputRange()
+    new InputRange(),
+    new ActiveToggle()
 ])

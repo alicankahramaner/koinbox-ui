@@ -15,11 +15,18 @@
 
     &-center {
         padding: $body-padding;
-        flex-basis: 90%;
+        flex-basis: 92%;
     }
 
     &-right{
-        flex-basis: 10%;
+        flex-basis: 6%;
+        position: sticky;
+        top:0;
+        z-index: 1000;
+        transition: all ease-in-out 0.3s;
+        padding: $body-padding;
+        padding-right: 0.75rem;
+        height: 100vh;
     }
 }
 

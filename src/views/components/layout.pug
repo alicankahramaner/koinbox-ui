@@ -4,7 +4,7 @@ html(lang='en')
     head
         title= Title
         link(rel='stylesheet' href='/styles/style.css')
-        script(src="https://code.jquery.com/jquery-3.6.0.slim.js") 
+        //- script(src="https://code.jquery.com/jquery-3.6.0.slim.js") 
         block headscript
     body
         .layout 
@@ -16,8 +16,9 @@ html(lang='en')
                     .row
                         block content
             .layout-right
-                span BTN
+                block Side
+                    include userMenu.pug
     include footer.pug
     block Script
         script(src='/scripts/app.js')
-block side
+
