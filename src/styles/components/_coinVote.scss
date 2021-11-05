@@ -47,13 +47,18 @@
         margin-bottom: 16px;
     }
 
-    .tags{
+    .tags {
         margin-bottom: 25px;
     }
 
     .actions {
         margin-top: 24px;
         display: flex;
+        .btn {
+            padding: 12px 0px;
+            font-weight: 600;
+            line-height: 16px;
+        }
     }
 
     .status {

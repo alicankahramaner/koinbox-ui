@@ -110,7 +110,36 @@ class MenuDropdown implements ModuleType {
     onClick(e: any) {
         let currentLink: HTMLLinkElement = e.target;
         document.querySelectorAll(`${this.selector} li.sub`).forEach(e => e.classList.remove('show'));
-        setTimeout(()=> currentLink.closest('li.sub').classList.add('show'),150)
+        setTimeout(() => currentLink.closest('li.sub').classList.add('show'), 150)
+    }
+}
+
+class InputRange implements ModuleType {
+    selector: string;
+    constructor() {
+        this.selector = '.read-duration-range';
+    }
+
+    init() {
+        var ranges = document.querySelectorAll(this.selector);
+
+        ranges.forEach(range => {
+            this.create(range);
+        })
+
+    }
+
+    create(item: any) {
+        var slider2 = new (window as any).rSlider({
+            target: item,
+            values: ['1dk','3dk','5dk','10dk','15dk','20dk','25dk','+30dk'],
+            range: false,
+            set: ['5dk'],
+            tooltip: false,
+            onChange: function (vals: any) {
+                console.log(vals);
+            }
+        });
     }
 }
 
@@ -118,5 +147,6 @@ class MenuDropdown implements ModuleType {
 const app = new App([
     new MenuCollapseModule(),
     new FilterArea(),
-    new MenuDropdown()
+    new MenuDropdown(),
+    new InputRange()
 ])

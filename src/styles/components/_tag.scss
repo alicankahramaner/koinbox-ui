@@ -106,4 +106,17 @@
         font-size: 14px;
         color: #898f99;
     }
+
+    // Variant
+    &.primary {
+        background-color: #3772ff;
+    }
+
+    &.pink {
+        background-color: #f6d7ff;
+    }
+
+    &.puppies {
+        background-color: #ffe6c3;
+    }
 }

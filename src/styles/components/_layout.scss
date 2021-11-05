@@ -1,5 +1,7 @@
 .layout {
     width: 100%;
+    max-width: 1920px;
+    margin:0px auto;
     display: flex;
     &-left {
         flex-basis: 280px;
@@ -11,9 +13,13 @@
         transition: all ease-in-out 0.3s;
     }
 
-    &-right {
+    &-center {
         padding: $body-padding;
-        flex-basis: 100%;
+        flex-basis: 90%;
+    }
+
+    &-right{
+        flex-basis: 10%;
     }
 }
 

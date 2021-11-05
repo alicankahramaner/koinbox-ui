@@ -7,15 +7,17 @@ html(lang='en')
         script(src="https://code.jquery.com/jquery-3.6.0.slim.js") 
         block headscript
     body
-    .layout 
-        .layout-left
-            include menu.pug
-        .layout-right
-            .container-fluid
-                include ./slider.pug
-                .row
-                    block content
+        .layout 
+            .layout-left
+                include menu.pug
+            .layout-center
+                .container-fluid
+                    include ./slider.pug
+                    .row
+                        block content
+            .layout-right
+                span BTN
     include footer.pug
-block Script
-    script(src='/scripts/app.js')
+    block Script
+        script(src='/scripts/app.js')
 block side

@@ -5,6 +5,7 @@ import { Image } from './tasks/image';
 import { SpriteSmith } from './tasks/spriteSmith';
 import { Font } from './tasks/font';
 import { IconFont } from './tasks/iconFont';
+import { Vendors } from './tasks/vendors';
 
 const Tasks = [
     Styles,
@@ -13,6 +14,7 @@ const Tasks = [
     Image,
     SpriteSmith,
     Font,
+    Vendors
     // IconFont
 ];
 

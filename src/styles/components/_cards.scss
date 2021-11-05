@@ -208,6 +208,33 @@
                 flex-basis: 220px;
             }
         }
+
+        &.white {
+            padding: 16px;
+            background-color: $white;
+            margin-bottom: 24px;
+            border:2px solid transparent;
+
+            .tags{
+                margin:15px 0px;
+            }
+
+            figure{
+                &::before{
+                    content:unset;
+                }
+            }
+
+            &:hover{
+                border-color: $brand-blue;
+            }
+
+            &::before {
+                @include absoluteFlag();
+                top:30%;
+                height: 25%;
+            }
+        }
     }
     // Wide
     &.wide {

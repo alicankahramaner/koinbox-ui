@@ -53,10 +53,8 @@
 
     &.approve,
     &.decline {
-        padding: 12px 0px;
+        
         font-size: 16px;
-        font-weight: 600;
-        line-height: 16px;
         margin: 0px 10px;
         text-align: center;
         width: 100%;
@@ -78,6 +76,17 @@
         color: #ff6037;
         &:hover {
             border-color: #ff6037;
+        }
+        &::before {
+            content: none;
+        }
+    }
+
+    &.lightblue {
+        background-color: #d7e3ff;
+        color: #3772ff;
+        &:hover {
+            border-color: #3772ff;
         }
         &::before {
             content: none;
@@ -135,12 +144,38 @@
         color: $white;
         background-color: #3772ff;
         padding: 8px 16px;
-        border-radius:20px;
+        border-radius: 20px;
         &::before {
             content: unset;
         }
         &:hover {
             color: #f2f3f4;
         }
+    }
+
+    &.primary-outline {
+        font-weight: 600;
+        font-size: 16px;
+        color: #898f99;
+        background-color: unset;
+        padding: 8px 16px;
+        border-radius: 20px;
+        border: 2px solid #dddfe2;
+        &::before {
+            content: unset;
+        }
+        &:hover, &.active {
+            color: #f2f3f4;
+            background-color: #3772ff;
+        }
+    }
+
+    &.big {
+        padding: 20px 40px !important;
+        min-width: 200px;
+    }
+
+    &.medium{
+        padding:16px 11px!important;
     }
 }

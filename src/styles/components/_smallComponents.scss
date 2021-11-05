@@ -258,3 +258,107 @@
 .section-block {
     margin-bottom: 68px;
 }
+
+// Page Cuft
+.page-cuft {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-content {
+        margin-right: 80px;
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: $brand-darkBlue;
+            line-height: 44px;
+            margin-bottom: 24px;
+        }
+
+        .tags {
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 28px;
+            color: #898f99;
+            margin-bottom: 31px;
+        }
+    }
+
+    figure {
+        // width: 570px;
+        flex-basis: 570px;
+        border-radius: $border-radius;
+        flex-shrink: 0;
+        overflow: hidden;
+        margin: 0;
+        min-height: 440px;
+    }
+}
+
+.blue-area {
+    display: flex;
+    padding: 32px;
+    border-radius: 36px;
+    background-color: #18203f;
+
+    .card {
+        &-title {
+            color: $white !important;
+        }
+
+        p {
+            color: #565f81;
+        }
+    }
+
+    .filter-area {
+        margin-top: 0;
+        .filter-btn {
+            border-color: #212b4f;
+            color: #565f81;
+            &.active {
+                color: $white;
+            }
+        }
+    }
+}
+
+// Alert
+.alert {
+    padding: 24px;
+    display: block;
+    border: 2px solid $brand-blue;
+    color: $brand-darkBlue;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 24px 0px;
+    border-radius: $border-radius;
+    background-color: $white;
+    position: relative;
+
+    &::before,
+    &::after {
+        @include absoluteFlag();
+    }
+
+    &::after {
+        left: unset;
+        right: 0;
+    }
+}
+
+.buttons {
+    padding:10px 0px;
+    .btn {
+        margin: 5px;
+        display: inline-block;
+        width: unset;
+    }
+}
+
+.guide-read-range{
+    width: 95%;
+}
