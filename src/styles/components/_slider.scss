@@ -14,15 +14,16 @@
         content: " ";
         background: $white;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0px;
+        left: 8px;
         width: 3px;
         height: 100%;
         box-shadow: $white 0px 0px 10px 6px;
+        z-index: 1;
     }
 
     &:after {
-        right: 0;
+        right: 1px;
         left: unset;
     }
 

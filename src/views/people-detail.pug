@@ -1,0 +1,54 @@
+extends components/layout.pug 
+block content
+    .row
+        .col-12
+            include components/breadcrump.pug
+    .row.page
+        .col-8
+            h1.detail-title Who Is Andre Cronje?
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque dolorem porro vitae ut perferendis dolores pariatur voluptas perspiciatis fugit esse minima culpa ratione aliquid quibusdam iure quia, aut provident aspernatur?
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam natus placeat numquam ut autem maiores blanditiis quisquam ex laudantium soluta provident distinctio, ipsa aspernatur possimus suscipit reiciendis sint. Nobis, similique!
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt animi minus soluta labore nulla accusantium. Rem obcaecati in eos quam. Vero delectus repellat dignissimos explicabo inventore! Ex ut eveniet fugit.
+            strong Who Is Andre Cronje?
+            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, quos aut quo velit asperiores id adipisci commodi. Consequuntur, necessitatibus. Sapiente fugit rerum maiores distinctio libero alias! Illum molestiae rerum optio?
+            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, quos aut quo velit asperiores id adipisci commodi. Consequuntur, necessitatibus. Sapiente fugit rerum maiores distinctio libero alias! Illum molestiae rerum optio
+
+            strong In 2020:
+            ul.solid
+                li Launched Yearn (YFI) and Keep3rV1
+                li Binary options partnership with Hegic
+                li Pickle & Yearn ferment co-operation dill
+                li Yearn & Cover merger
+                li PowerPool & Yearn ecosystem partnership
+                li Yearn & Cream v2 merger
+                li Yearn & Akropolish merger
+                li Yearn & Sushiswap collaboration
+        .col-4
+            include components/userCard.pug
+            include components/socialAccess.pug
+    .row.block-row
+        h2 Diğer Profiller
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+    .row.block-row
+        h2 Kuruculardan Haberler
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+
+block append Side
+    include components/sideShare.pug
+    include components/sideSettings.pug

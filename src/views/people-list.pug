@@ -1,0 +1,69 @@
+extends components/layout.pug 
+block content
+    .row
+        .col-12
+            include components/breadcrump.pug
+    .row.page
+        .col-12
+            h1.detail-title En Popüler Kripto Profilleri
+            p.cuft  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet vestibulum arcu, nec euismod libero efficitur vel. Praesent ultricies risus at neque dignissim blandit. Morbi pretium placerat tellus, sed eleifend diam sodales id
+    .row
+        .col-12
+            .search-area
+                .row
+                    .col-6.content-left
+                        input(type="text" placeholder="Ara")
+                    .col-2
+                        +select("Kategori")
+                    .col-2
+                        +select("Pozisyon")
+                    .col-2
+                        +select("Sırala")
+    .row
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+        .col-4
+            include components/userCard.pug
+    .row.block-row
+        .col-12
+            +button("Daha Fazla Göster","refresh")
+    // SpaceCardBigs
+    .row.block-row
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+        .col-4
+            include components/spaceCardBig.pug
+    .row.block-row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")
+    
+
+
+block append Side
+    include components/sideShare.pug
+    include components/sideSettings.pug
