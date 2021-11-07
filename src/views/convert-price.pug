@@ -1,0 +1,55 @@
+extends components/layout.pug 
+block content
+    .row 
+        .col-12
+            include components/breadcrump.pug
+    .row
+        .col-8
+            h1.detail-title Kripto Para Dönüştürücü
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque dolorem porro vitae ut perferendis dolores pariatur voluptas perspiciatis fugit esse minima culpa ratione aliquid quibusdam iure quia, aut provident aspernatur?
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque dolorem porro vitae ut perferendis dolores pariatur voluptas perspiciatis fugit esse minima culpa ratione aliquid quibusdam iure quia, aut provident aspernatur?
+            include components/coinConverter.pug
+
+
+        .col-4
+            .section-block
+                h3.aside-title Popüler İçerikler 
+                include components/listPost.pug
+                include components/listPost.pug
+                include components/listPost.pug
+                include components/listPost.pug
+                include components/listPost.pug
+                include components/listPost.pug
+    .row
+        .content-card
+            .content-card-header
+                h2.title Bitcoin Haberleri
+            .content-card-body
+                .row
+                    .col-4
+                        +filterCard('coin')
+                    .col-4
+                        +filterCard('coin')
+                    .col-4
+                        +filterCard('coin')
+                    .col-4
+                        +filterCard('coin')
+                    .col-4
+                        +filterCard('coin')
+                    .col-4
+                        +filterCard('coin')
+    .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")
+
+
+block append Side 
+    include components/sideShare.pug
+    include components/sideSettings.pug

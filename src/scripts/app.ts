@@ -167,11 +167,60 @@ class ActiveToggle implements ModuleType {
 
 }
 
+class CoinCompare implements ModuleType {
+    selector: string = '.coin-compare-convert';
+
+    init() {
+        document.querySelectorAll(this.selector).forEach(e => {
+            this.setOrder(e as any);
+            e.addEventListener('click', this.onClick);
+        })
+    }
+
+    setOrder(e: HTMLSpanElement) {
+        let span: HTMLElement = e;
+        let wrapper = span.closest('.coin-compare');
+        let list = wrapper.querySelector('.coin-compare-list');
+        let items = list.querySelectorAll('.coin-compare-item');
+
+        items.forEach((item, index) => {
+            let t = item as HTMLDivElement;
+            t.style.order = index.toString();
+        })
+    }
+
+    onClick(e: any) {
+        let span: HTMLElement = e.target;
+        let wrapper = span.closest('.coin-compare');
+        let list = wrapper.querySelector('.coin-compare-list');
+        let items = list.querySelectorAll('.coin-compare-item');
+
+        items.forEach((item, index) => {
+            let t = item as HTMLDivElement;
+            let order = Number(t.style.order);
+            if (order > 0) {
+                order--;
+            } else {
+                order++;
+            }
+
+            if(order === 0){
+                t.classList.add('first')
+            }else{
+                t.classList.remove('first')
+            }
+            
+            t.style.order = order.toString();
+        });
+    }
+}
+
 // Init App
 const app = new App([
     new MenuCollapseModule(),
     new FilterArea(),
     new MenuDropdown(),
     new InputRange(),
-    new ActiveToggle()
+    new ActiveToggle(),
+    new CoinCompare()
 ])

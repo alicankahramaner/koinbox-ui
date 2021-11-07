@@ -1,0 +1,33 @@
+include ../mixins.pug
+// Coin Converter:Start
+.coin-converter
+    .coin-converter-header
+        span Bitcoin - TRY
+
+        .proccess-selection
+            +buttonRadio('Al','process','buy',true)
+            +buttonRadio('Sat','process','sell')
+    .coin-converter-body
+        .coin-compare
+            .coin-compare-list
+                .coin-compare-item.first
+                    .coin-compare-item-info
+                        figure 
+                            img(src="/resources/images/btc-icon.png" alt="")
+                        span.names
+                            span.code BTC
+                            span.name Bitcoin
+                    input(type="text" value="0.1").coin-price
+
+                .coin-compare-item
+                    .coin-compare-item-info
+                        figure 
+                            img(src="/resources/images/tl-logo.png" alt="")
+                        span.names
+                            span.code TL
+                            span.name Türk Lirası
+                    input(type="text" value="320₺").coin-price
+            span.coin-compare-convert
+                span.icon-s-convert
+
+// Coin Converter:End

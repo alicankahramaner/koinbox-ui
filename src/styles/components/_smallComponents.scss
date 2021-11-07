@@ -413,7 +413,7 @@
                 &.active {
                     z-index: 20;
                     position: relative;
-                    &::after{
+                    &::after {
                         opacity: 0;
                     }
                     & + ul {
@@ -684,14 +684,182 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F2F3F4;
-    border:2px solid #DDDFE2;
+    background-color: #f2f3f4;
+    border: 2px solid #dddfe2;
     border-radius: $border-radius;
-    padding:14px 0;
+    padding: 14px 0;
     a {
         display: inline-flex;
         &:not(:last-child) {
             margin-right: 48px;
+        }
+    }
+}
+
+// Button Radio
+.button-radio {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 8px 16px;
+    input[type="radio"] {
+        appearance: none;
+        border: none;
+        width: 80px;
+        height: 40px;
+        border: 2px solid #dddfe2;
+        border-radius: 20px;
+        transition: all ease-in-out 0.3s;
+        position: relative;
+        background-color: unset;
+        cursor: pointer;
+
+        &:checked {
+            background-color: $brand-blue;
+            border-color: $brand-blue;
+
+            & + span {
+                color: $white;
+                z-index: 1;
+            }
+        }
+    }
+
+    span {
+        font-weight: 500;
+        color: #898f99;
+        font-size: 16px;
+        position: absolute;
+        cursor: inherit;
+        z-index: -1;
+        transition: all ease-in-out 0.3s;
+    }
+}
+
+// Coin Converter
+.coin-converter {
+    display: flex;
+    flex-direction: column;
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        & > span {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            color: $brand-darkBlue;
+        }
+
+        .proccess-selection {
+        }
+    }
+
+    &-body {
+    }
+}
+
+// Coin Compare
+.coin-compare {
+    position: relative;
+    align-items: center;
+    background-color: #dddfe2;
+    border-radius: 16px;
+    border: 2px solid #dddfe2;
+    overflow: hidden;
+    display: flex;
+    &-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-convert {
+        position: absolute;
+        left: 16px;
+        border: 2px solid #dddfe2;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        cursor: pointer;
+        [class*="icon-"] {
+            margin: 0;
+        }
+    }
+
+    &-item {
+        padding: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f2f3f4;
+
+        &.first {
+            background-color: $white;
+            margin-bottom:2px;
+        }
+
+        &-info {
+            align-items: center;
+            justify-self: flex-start;
+            figure {
+                height: 44px;
+                width: 44px;
+                border-radius: 100%;
+                overflow: hidden;
+                display: block;
+                float: left;
+                margin-right: 16px;
+                img {
+                    width: 100%;
+                }
+            }
+
+            .names {
+                float: left;
+                & > span {
+                    display: inline-block;
+                    width: 100%;
+                    &.code {
+                        font-weight: 500;
+                        color: #898f99;
+                        font-size: 16px;
+                        line-height: 14px;
+                        margin-bottom: 8px;
+                    }
+
+                    &.name {
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 24px;
+                        color: $brand-darkBlue;
+                    }
+                }
+            }
+        }
+
+        .coin-price{
+            background: none;
+            height: 100%;
+            border:none;
+            appearance: none;
+            text-align: right;
+            font-weight: bold;
+            color:$brand-darkBlue;
+            font-size: 24px;
+            line-height: 24px;
+            outline: none;
+            &:focus{
+                outline: none;
+            }
         }
     }
 }

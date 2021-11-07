@@ -34,3 +34,8 @@ mixin badge(icon,text)
         if(icon)
             span(class="icon-"+icon)
         span= text
+
+mixin buttonRadio(label,name,value,checked)
+    .button-radio
+        input(type="radio" name=name value=value checked=checked)
+        span= label
