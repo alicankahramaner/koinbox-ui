@@ -804,7 +804,7 @@
 
         &.first {
             background-color: $white;
-            margin-bottom:2px;
+            margin-bottom: 2px;
         }
 
         &-info {
@@ -846,20 +846,42 @@
             }
         }
 
-        .coin-price{
+        .coin-price {
             background: none;
             height: 100%;
-            border:none;
+            border: none;
             appearance: none;
             text-align: right;
             font-weight: bold;
-            color:$brand-darkBlue;
+            color: $brand-darkBlue;
             font-size: 24px;
             line-height: 24px;
             outline: none;
-            &:focus{
+            &:focus {
                 outline: none;
             }
+        }
+    }
+}
+
+// grid-list
+
+.grid-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    &.c-4{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    a {
+        text-decoration: unset;
+        font-weight: 500;
+        font-size: 16px;
+        color:#898F99;
+        padding:7px 5px;
+        display: block;
+
+        &:hover{
+            color:$brand-blue;
         }
     }
 }
