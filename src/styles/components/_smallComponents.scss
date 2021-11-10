@@ -677,6 +677,11 @@
         line-height: 24px;
         color: #898f99;
     }
+
+    .social-access{
+        margin-top:10px;
+        background-color: unset!important;
+    }
 }
 
 // Social Access
@@ -869,19 +874,56 @@
 .grid-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    &.c-4{
+    &.c-4 {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     a {
         text-decoration: unset;
         font-weight: 500;
         font-size: 16px;
-        color:#898F99;
-        padding:7px 5px;
+        color: #898f99;
+        padding: 7px 5px;
         display: block;
 
-        &:hover{
-            color:$brand-blue;
+        &:hover {
+            color: $brand-blue;
+        }
+    }
+}
+
+.white-box {
+    padding: 16px;
+    background-color: $white;
+    border-radius: $border-radius;
+}
+
+// Single Search Area Form"
+.single-search-form {
+    position: relative;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input{
+        width: 100%;
+    }
+    button[type=submit]{
+        position: absolute;
+        background:none;
+        appearance: none;
+        border:0;
+        right:10px;
+    }
+}
+
+.partner-list{
+    padding:10px 30px;
+    display: flex;
+    justify-content: space-between;
+    a{
+        text-decoration: none;
+        img{
+            width: 100%;
         }
     }
 }

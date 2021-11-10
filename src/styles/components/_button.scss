@@ -178,4 +178,9 @@
     &.medium{
         padding:16px 11px!important;
     }
+
+    &-block{
+        display: flex;
+        width: 100%;
+    }
 }

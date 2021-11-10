@@ -1,0 +1,99 @@
+extends components/layout.pug 
+block content
+    include components/breadcrump.pug
+    .row.page
+        .col-8
+            h1.detail-title İmtiyaz Sahibi
+            p Koinbox Dijital Teknolojiler Sanayi ve Ticaret A.Ş. Adres : Kızılırmak Mah. Dumlupınar Bulvarı Next Level No:3 C1-160 Çankaya/Ankara
+            p
+                | Tel: +90 312 939 8661 | 
+                | E-Posta: a(href="mailto:info@koinbox.net") info@koinbox.net
+            p Mersis No: 0574095194400001
+
+        .col-4 
+            .white-box.flex.flex-column.flex-align-center.h-100p.flex-justify-end.relative
+                img(src="/resources/images/logo.svg" alt="Koinbox").m-b-50.p-absolute-top-50p
+                +button('Detay Git',null,'primary btn-block')
+
+    .row.filter-area
+        .col-12.filter-area-filters
+            .search-area.row
+                .col-9 
+                    button(data-val="all").btn.borderred.primary.filter-btn.active Tümü
+                    button(data-val="yonetim-kadrosu").btn.borderred.primary.filter-btn Yönetim Kadrosu
+                    button(data-val="yazar").btn.borderred.primary.filter-btn Yazar
+                    button(data-val="reklam").btn.borderred.primary.filter-btn Reklam
+                    button(data-val="diger").btn.borderred.primary.filter-btn Diğer
+                .col-3
+                    form.single-search-form(action="") 
+                        input(type="text" placeholder="Ara")
+                        button(type="submit")
+                            span.icon-search
+                
+        .col-12
+            .row.filter-area-body
+                .col-4.filter-item.yonetim-kadrosu
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.yazar
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.reklam
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.diger
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.yonetim-kadrosu
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.yazar
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.reklam
+                    include components/userCardWithContact.pug
+                .col-4.filter-item.diger
+                    include components/userCardWithContact.pug
+    
+    .row
+        .col-12 
+            .content-card
+                .content-card-header
+                    h2.title Partnerlar
+                .content-card-body
+                    .partner-list
+                        a(href="#")
+                            img(src="/resources/images/turhost.png", alt="")
+                        a(href="#")
+                            img(src="/resources/images/seojen.png", alt="")
+                        a(href="#")
+                            img(src="/resources/images/websight.png", alt="")
+                        a(href="#")
+                            img(src="/resources/images/turhost.png", alt="")
+    
+    .row
+        .col-12 
+            .content-card
+                .content-card-header
+                    h2.title Hizmetlerimiz
+                .content-card-body
+                    .row
+                        .col-4
+                            .white-box.p-22
+                                span.box-title Marketting Strategy
+                                p.box-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit atque, explicabo mollitia ullam
+                        .col-4
+                            .white-box.p-22
+                                span.box-title Marketting Strategy
+                                p.box-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit atque, explicabo mollitia ullam
+                        .col-4
+                            .white-box.p-22
+                                span.box-title Marketting Strategy
+                                p.box-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem reprehenderit atque, explicabo mollitia ullam
+                            
+
+    
+    .row
+        .col-12 
+            h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+            h3 Kripto Para Nedir?
+            .ghost-content
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            +button("Daha Fazla Göster","refresh")
