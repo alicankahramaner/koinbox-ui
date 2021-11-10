@@ -1,0 +1,36 @@
+extends components/layout.pug
+block content
+    .row
+        .col-8.page
+            h1.detail-title Osman Kolat
+            p Osman Kolat, 1987 Ankara doğumludur. Ekonomi, kripto paralar, fintech üzerine çalışmalar yapmaktadır. 
+            p Aynı zamanda ekonomi okur yazarlığı yanı sıra, mevcut ekonomik düzeni daha iyi anlayabilmek ve okuyucularına aktarabilmek adına akademik çalışmalar yürütmektedir.
+            
+        .col-4
+            include components/userCardWithContact.pug
+    .row
+        .col-12
+            .content-card
+                .content-card-header
+                    h2.title Osman Kolat'ın Yazıları
+                .content-card-body
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    include components/cardWideLarge.pug
+                    .col-12
+                        +button("Daha Fazla Göster","refresh")
+    .row
+        .col-12 
+            h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+            h3 Kripto Para Nedir?
+            .ghost-content
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            +button("Daha Fazla Göster","refresh")
