@@ -678,9 +678,9 @@
         color: #898f99;
     }
 
-    .social-access{
-        margin-top:10px;
-        background-color: unset!important;
+    .social-access {
+        margin-top: 10px;
+        background-color: unset !important;
     }
 }
 
@@ -904,26 +904,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    input{
+    input {
         width: 100%;
     }
-    button[type=submit]{
+    button[type="submit"] {
         position: absolute;
-        background:none;
+        background: none;
         appearance: none;
-        border:0;
-        right:10px;
+        border: 0;
+        right: 10px;
     }
 }
 
-.partner-list{
-    padding:10px 30px;
+.partner-list {
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
-    a{
+    a {
         text-decoration: none;
-        img{
+        img {
             width: 100%;
         }
     }
+}
+
+.bookmark-btn {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: none;
+    appearance: none;
+    border: none;
+    background-color: $white;
 }
