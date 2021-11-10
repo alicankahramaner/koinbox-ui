@@ -204,15 +204,84 @@ class CoinCompare implements ModuleType {
                 order++;
             }
 
-            if(order === 0){
+            if (order === 0) {
                 t.classList.add('first')
-            }else{
+            } else {
                 t.classList.remove('first')
             }
-            
+
             t.style.order = order.toString();
         });
     }
+}
+
+class PhoneInput implements ModuleType {
+    selector: string = '.phone-input';
+
+    init() {
+        document.querySelectorAll(this.selector).forEach(input => {
+            input.addEventListener('input', this.onKeyUp);
+            input.addEventListener('keydown', this.onKeyUp)
+        })
+    }
+
+    onKeyUp(e: any) {
+        let val = e.target.value.replace(/\D/g, '').toString();
+        let newVal = new (window as any).StringMask('(000) 000 00 00').apply(val);
+        if (e.keyCode === 8) {
+            newVal = String(newVal.replace(/\D/g, ''))
+            newVal = newVal.slice(0, newVal.length - 1);
+            newVal = new (window as any).StringMask('(000) 000 00 00').apply(newVal);
+        }
+        e.target.value = newVal;
+    }
+}
+
+class CharFilter implements ModuleType {
+    selector: string = '.char-filter-btn';
+    init() {
+        document.querySelectorAll(this.selector).forEach((btn, index) => {
+            if (index === 0) {
+                this.filter(btn as any);
+            }
+            btn.addEventListener('click', this.onClick.bind(this))
+        })
+    }
+
+    onClick(e: any) {
+        let btn: HTMLLinkElement = e.target;
+        this.filter(btn);
+
+    }
+
+    filter(btn: HTMLLinkElement) {
+        let char: string = btn.dataset.char || '';
+        let wrapper = btn.closest('.char-filter-area');
+        let charLists = wrapper.querySelectorAll('.char-list');
+        wrapper.querySelectorAll(this.selector).forEach(charBtn => {
+            if (charBtn === btn) {
+                charBtn.classList.add('active')
+            } else {
+                charBtn.classList.remove('active')
+            }
+        })
+
+        charLists.forEach((charItem: HTMLDivElement) => {
+            let listChar: HTMLSpanElement = charItem.querySelector('span.char');
+            if (String(char) === '#') {
+                console.log('show all')
+                charItem.classList.remove('hide')
+                return;
+            }
+            if (!listChar.dataset.char) return;
+            if (char !== String(listChar.dataset.char)) {
+                charItem.classList.add('hide')
+            } else {
+                charItem.classList.remove('hide')
+            }
+        })
+    }
+
 }
 
 // Init App
@@ -222,5 +291,7 @@ const app = new App([
     new MenuDropdown(),
     new InputRange(),
     new ActiveToggle(),
-    new CoinCompare()
+    new CoinCompare(),
+    new PhoneInput(),
+    new CharFilter()
 ])

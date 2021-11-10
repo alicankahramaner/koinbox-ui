@@ -107,5 +107,43 @@
 }
 
 .p-22 {
-    padding: 22px!important;
+    padding: 22px !important;
+}
+
+.w-80p {
+    width: 80%;
+}
+
+.light-blue-box {
+    background-color: #ebf1ff;
+    border-radius: 22px;
+    padding:60px 0px;
+    margin-bottom:15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    strong{
+        font-weight: bold;
+        font-size: 48px;
+        color:$brand-darkBlue;
+        line-height: 59px;
+    }
+
+    span{
+        font-weight: 600;
+        font-size: 18px;
+        color:$brand-darkBlue;
+    }
+}
+
+.light-box-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+
+    .light-blue-box{
+        flex-basis: 50%;
+        margin:15px;
+    }
 }

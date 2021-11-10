@@ -1,0 +1,61 @@
+extends components/layout.pug
+block content
+    .row.page
+        .col-6
+            h1.detail-title İmtiyaz Sahibi
+            p Koinbox Dijital Teknolojiler Sanayi ve Ticaret A.Ş. Adres : Kızılırmak Mah. Dumlupınar Bulvarı Next Level No:3 C1-160 Çankaya/Ankara
+            p
+                | Tel: +90 312 939 8661 | 
+                | E-Posta: a(href="mailto:info@koinbox.net") info@koinbox.net
+            p Mersis No: 0574095194400001
+        .col-6
+            .flex.flex-column.flex-justify-center.flex-align-center.h-100p
+                <iframe class="map-frame" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d765.0868939467601!2d32.81205401822054!3d39.91123727919206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1str!2str!4v1636551370242!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    .row
+        .col-10.offset-md-1.offset-lg-1
+            .content-card
+                .content-card-header
+                    h2.title İletişim Formu
+                .content-card-body
+                    .white-box.form-box
+                        form(action="")
+                            .row 
+                                .col-6 
+                                    .form-item
+                                        label Ad Soyad 
+                                        input(type="text")
+                                .col-6 
+                                    .form-item
+                                        label Konu
+                                        +select('Konu Seçiniz')
+                                .col-6 
+                                    .form-item
+                                        label E-Posta 
+                                        input(type="text")
+                                .col-6 
+                                    .form-item
+                                        label Telefon 
+                                        input(type="text").phone-input
+                                .col-12
+                                    .form-item
+                                        label Başlık 
+                                        input(type="text")
+                                .col-12
+                                    .form-item
+                                        label Mesaj 
+                                        textarea(name="", cols="30", rows="10") 
+                                .col-12.content-right
+                                    button(type="submit").btn.primary Gönder
+    .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")
+
+block prepend Script
+    script(src="/resources/vendor/string-mask.js")

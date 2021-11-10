@@ -1,0 +1,80 @@
+extends components/layout.pug
+block content
+    include components/breadcrump.pug
+    .row.page
+        .col-12
+        h1.detail-title Sözlük
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro officia, obcaecati fuga consequatur quas? Voluptas sapiente vel assumenda nostrum, impedit eos incidunt necessitatibus blanditiis, nemo maiores doloribus perferendis id.
+    .char-filter-area
+        .row
+            .col-12
+                .search-area
+                    .row
+                        .col-8
+                            .char-filter-chars
+                                each val in ['#','A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'Y', 'Z']
+                                    a(href="javascript:;" data-char=val).btn.ghost.char-filter-btn= val
+                        .col-2
+                            input(type="text" placeholder="Ara")
+                        .col-2
+                            +select('Sırala')
+        .row
+            .col-12
+                .char-list
+                    span(data-char="A").char A
+                    .list
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                .char-list
+                    span(data-char="B").char B
+                    .list
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+                        .char-list-item
+                            a(href="#") Algorithmic Market Operations (AMOs)
+                            p Algorithmic Market Operations (AMOs) automatically control the supply of algorithmic stablecoins while improving scalability, decentralization, and transparency.
+    .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")

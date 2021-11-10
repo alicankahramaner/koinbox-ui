@@ -1,0 +1,65 @@
+extends components/layout.pug
+block content
+    .row.page
+        .col-12
+        h1.detail-title En Popüler Etkinlikler
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis porro officia, obcaecati fuga consequatur quas? Voluptas sapiente vel assumenda nostrum, impedit eos incidunt necessitatibus blanditiis, nemo maiores doloribus perferendis id.
+    .row
+        .col-12
+            .search-area
+                .row
+                    .col-8
+                        .col-3
+                            +select('Kategori')
+                    .col-2
+                        input(type="text" placeholder="Ara")
+                    .col-2
+                        +select('Sırala')
+    .row
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+        .col-4
+            include components/coinVote.pug
+    // SpaceCardBigs
+    .row
+        .content-card
+            .content-card-header
+                h2.title Etkinlik Haberleri
+            .content-card-body
+                .row
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+    .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")

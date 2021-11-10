@@ -940,3 +940,187 @@
     border: none;
     background-color: $white;
 }
+
+.map-frame {
+    border: none;
+    width: 100%;
+    height: 280px;
+}
+
+.form-box {
+    padding: 32px 54px;
+}
+
+.flag-box {
+    position: relative;
+    &::before {
+        @include absoluteFlag();
+    }
+}
+
+.twin-circle {
+    display: flex;
+    justify-content: center;
+    .circle {
+        background-color: rgba(215, 227, 255, 0.5);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+
+        &:last-child {
+            margin-left: -25px;
+        }
+
+        strong {
+            font-weight: bold;
+            font-size: 48px;
+            color: $brand-darkBlue;
+        }
+
+        span {
+            font-size: 18px;
+            font-weight: 500;
+            color: $brand-gray;
+        }
+    }
+}
+
+// Solution List
+.solution-list {
+    padding: 0px 10px;
+    .solution-item {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+
+        figure {
+            display: flex;
+            width: 80px;
+            height: 80px;
+            border: 2px solid #dddfe2;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        strong {
+            font-weight: bold;
+            margin-bottom: 24px;
+            font-size: 18px;
+            color: $brand-darkBlue;
+        }
+
+        span {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+.char-list {
+    display: flex;
+    margin-bottom: 30px;
+    span.char {
+        flex-basis: 15%;
+        font-weight: bold;
+        font-size: 172px;
+        color: #898f99;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px 35px;
+        &::before,
+        &::after {
+            content: attr(data-char) " ";
+            display: block;
+        }
+
+        &::before {
+            font-size: 86px;
+            opacity: 0.6;
+            order: 1;
+        }
+
+        &::after {
+            font-size: 43px;
+            opacity: 0.3;
+            order: 2;
+        }
+    }
+    .list {
+        flex-basis: 100%;
+        .char-list-item {
+            padding: 24px 30px;
+            border-radius: 24px;
+            border: 2px solid #dddfe2;
+            margin-bottom: 18px;
+            a {
+                color: $brand-darkBlue;
+                text-decoration: none;
+                font-size: 21px;
+                font-weight: bold;
+                line-height: 21px;
+                margin-bottom: 16px;
+                display: block;
+                transition: all ease-in-out 0.3s;
+                &:hover {
+                    color: #3772ff;
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 28px;
+                color: #898f99;
+            }
+        }
+    }
+}
+
+// Char Filter
+.char-filter-area {
+    .char-filter-chars {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            width: 16px;
+            text-align: center;
+            color: #898f99;
+            transition: all ease-in-out 0.3s;
+            margin: 0px 5px;
+            position: unset;
+            &:after {
+                content: " ";
+                display: block;
+                width: 16px;
+                position: absolute;
+                height: 2px;
+                background-color: $brand-blue;
+                bottom: 2px;
+                transition: all ease-in-out 0.3s;
+                top: 100%;
+                opacity: 0;
+            }
+            &.active {
+                color: $brand-blue;
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

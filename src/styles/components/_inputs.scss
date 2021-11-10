@@ -4,6 +4,7 @@
     border: 2px solid #dddfe2;
     border-radius: 24px;
     margin-bottom: 25px;
+    position: relative;
 
     &-title {
         font-weight: 600;
@@ -20,6 +21,7 @@
     border-radius: 8px;
     position: relative;
     justify-content: flex-end;
+    align-items: center;
     select {
         appearance: none;
         outline: none;
@@ -44,7 +46,7 @@
     }
 }
 
-input {
+input,textarea {
     background-color: #f2f3f4;
     padding: 16px;
     border: 2px solid #dddfe2;
@@ -52,6 +54,7 @@ input {
     height: 30px;
     font-size: 12px;
     color: #898f99;
+    width: 100%;
 }
 
 .progress {
@@ -101,7 +104,6 @@ input {
 
 // Range
 .range-wrapper {
-    
     .rs-container {
         margin: 5px;
         display: inline-flex;
@@ -140,5 +142,31 @@ input {
                 content: unset;
             }
         }
+    }
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom:16px;
+    label {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 18px;
+        color: $brand-darkBlue;
+        margin-bottom: 16px;
+    }
+
+    input,.select,textarea{
+        height: 56px;
+        border:none;
+        line-height: 56px;
+        border-radius: $border-radius;
+    }
+
+    textarea{
+        min-height: 100px;
+        resize: none;
+        line-height: unset;
     }
 }
