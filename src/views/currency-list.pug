@@ -1,0 +1,46 @@
+extends components/layout.pug
+block content
+    .row.page
+        .col-12
+            h1.detail-title En Popüler 100 Kripto Para ve Token
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error cumque doloremque corrupti natus earum, consectetur, rem aspernatur repellendus totam eius quibusdam ad non veritatis a modi delectus quas cum eaque?
+    .row
+        .col-12
+            .search-area
+                .row
+                    .col-3.content-left
+                        input(type="text" placeholder="Ara")
+                    .col-2.offset-md-5
+                        +select('Kategori')
+                    .col-2
+                        +select('Sırala')
+    include components/coinListGrid.pug
+    // SpaceCardBigs
+    .row
+        .content-card
+            .content-card-header
+                h2.title Koin Haberleri
+            .content-card-body
+                .row
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+                    .col-4
+                        include components/spaceCardBig.pug
+    .row
+        .col-12 
+          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+          h3 Kripto Para Nedir?
+          .ghost-content
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+          +button("Daha Fazla Göster","refresh")

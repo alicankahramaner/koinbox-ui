@@ -1,0 +1,19 @@
+doctype html  
+html(lang='en')  
+    head
+        title= Title
+        link(rel='stylesheet' href='/styles/style.css')
+        block headscript
+    body.register-login-page
+        .register-login-page-content
+            h1 Hesap Oluştur 
+
+            form(action="#") 
+                .form-item
+                    label E-Posta
+                    input(type="text")
+                .form-item
+                    button(type="submit") Yeni Hesap Oluştur
+            p Bir hesap oluşturarak, Gizlilik Politikamızı ve Hizmet Şartlarımızı kabul etmiş olursunuz. 
+            
+            a(href="#" class="sublink") Hesabın mı var? Giriş Yap

@@ -1,0 +1,160 @@
+extends components/layout.pug
+block content
+    include components/breadcrump.pug
+    // Coin Detail
+    .row
+        .col-12
+            .coin-header
+                h1.coin-title
+                    img(src="/resources/images/btc-icon.png" alt="").coin-icon
+                    | Bitcoin
+                .coin-action-buttons
+                    +button('Satın Al',null,'primary-outline active')
+                    +button('Kripto Kazan',null,'primary-outline')
+            p.cuft Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae assumenda repellat, ut perferendis dolor, expedita quidem autem, molestiae nemo iusto est aspernatur cum accusamus dolorum! Voluptas excepturi voluptate velit repellat.
+
+    .row
+        .col-12
+            .coin-stats.ghost-box
+                .coin-stats-large
+                    span.coin-name Bitcoin Değeri (BTC)
+                    .coin-value
+                        strong ₺366,785.33
+                        +percentTagFileld('1.66','up')
+                    .coin-sub-coin
+                        span 14.31 ETH
+                        +percentTag('1.66','down')
+                    .coin-information
+                        .status-label
+                            span
+                                span Düşük:
+                                strong ₺344,399.44
+                            span 
+                                span Yüksek: 
+                                strong ₺4356
+                        div(class="progress gray" data-val="25")
+
+                .coin-stats-item
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161',null,'col')
+                        +percentTag('1.66','up')
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161',null,'col')
+                        +percentTag('1.66','up')
+                .coin-stats-item
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161',null,'col')
+                        +percentTag('1.66','down')
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161',null,'col')
+                .coin-stats-item
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161',null,'col')
+                        +percentTag('1.66','up')
+                    .coin-stats-box
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161')
+                        +dataLabel('Dolaşan Arz','₺6,864,153,537,161')
+
+    // Chart and Sidebar
+    .row
+        // Coin Chart
+        .col-8
+            .tab-wrapper
+                .tabs
+                    a(class='btn primary-outline tab-btn' data-target="Genel") Genel
+                    a(class='btn primary-outline tab-btn' data-target="Piyasa") Piyasa
+                    a(class='btn primary-outline tab-btn' data-target="Geçmiş") Geçmiş
+                    a(class='btn primary-outline tab-btn' data-target="Haberler") Haberler
+                    a(class='btn primary-outline tab-btn' data-target="Analiz") Analiz
+                .tab-contents
+                    div(class='tab-item' data-tab="Genel")
+                        span.tab-title Bitcoin - TRY Chart
+                        include components/coinChart.pug
+                        .row
+                            .col-12 
+                                h2.page-title BTC Fiyatı Canlı Veri
+                            .col-12
+                                h3 Kripto Para Nedir?
+                            .ghost-content
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                            +button("Daha Fazla Göster","refresh")
+                    div(class='tab-item' data-tab="Piyasa")
+                        span Piyasa
+                    div(class='tab-item' data-tab="Geçmiş")
+                        span Geçmiş
+                    div(class='tab-item' data-tab="Haberler")
+                        span Haberler
+                    div(class='tab-item' data-tab="Analiz")
+                        span Analiz
+
+
+        // Coin Stats
+        .col-4
+            include components/coinConverterSmall.pug
+            .ghost-box
+                h3 Bitcoin İstatistikleri
+
+                .data-labels
+                    +dataLabel('Bitcoin Değeri','₺42,156.32')
+                    +dataLabel('Fiyat Değişimi','₺-1,011.17')
+                    +dataLabel('24s En Düşük / En Yüksek','₺39,787.61 / ₺43,303.40')
+                    +dataLabel('İşlem Hacmi 24s','₺43,086,755,212.35')
+                    +dataLabel('Hacim / Piyasa Değeri','0.05415')
+                    +dataLabel('Piyasa Hakimiyeti','42.58%')
+                    +dataLabel('Piyasam Sıralaması','#1')
+                .content-center
+                    +button('Daha Fazla Göster','refresh','ghost m-auto')
+            .small-ads-box
+                img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
+
+    // Other Coins
+    .row.page
+        .col-12
+            h3.detail-title Diğer Kripto Paralar
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos labore dolor doloremque, maiores officiis earum asperiores inventore harum totam, laborum mollitia nulla unde veniam ex enim voluptate possimus sunt ut.
+        include components/coinListGrid.pug
+
+    // Bitcoin Haberleri
+    .row
+        .col-12
+            .content-card 
+                .content-card-header
+                    h2.title Bitcoin Haberleri
+                .content-card-body
+                    .row
+                        .col-4
+                            include components/spaceCardBig.pug
+                        .col-4
+                            include components/spaceCardBig.pug
+                        .col-4
+                            include components/spaceCardBig.pug
+                        .col-4
+                            include components/spaceCardBig.pug
+                        .col-4
+                            include components/spaceCardBig.pug
+                        .col-4
+                            include components/spaceCardBig.pug
+    .row
+        .col-12 
+            h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+        .col-12
+            h3 Kripto Para Nedir?
+            .ghost-content
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+                p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+            +button("Daha Fazla Göster","refresh")
+block prepend Script
+    script(src="https://s3.tradingview.com/tv.js") 
+block append Script
+    script(src="/resources/vendor/chartDemo.js") 
+block append Side
+    include components/sideShare.pug
+    include components/sideSettings.pug

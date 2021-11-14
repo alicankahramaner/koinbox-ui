@@ -46,7 +46,8 @@
     }
 }
 
-input,textarea {
+input,
+textarea {
     background-color: #f2f3f4;
     padding: 16px;
     border: 2px solid #dddfe2;
@@ -71,6 +72,7 @@ input,textarea {
         position: absolute;
         left: 0;
         top: 0;
+        border-radius: 12px;
         background-color: #3772ff;
         transition: all ease-in-out 0.3s;
     }
@@ -79,6 +81,13 @@ input,textarea {
             &:after {
                 width: round(percentage($size/100));
             }
+        }
+    }
+
+    &.gray {
+        background-color: #dddfe2;
+        &:after {
+            background-color: #a9abb0;
         }
     }
 }
@@ -148,7 +157,7 @@ input,textarea {
 .form-item {
     display: flex;
     flex-direction: column;
-    margin-bottom:16px;
+    margin-bottom: 16px;
     label {
         font-weight: 600;
         font-size: 18px;
@@ -157,14 +166,16 @@ input,textarea {
         margin-bottom: 16px;
     }
 
-    input,.select,textarea{
+    input,
+    .select,
+    textarea {
         height: 56px;
-        border:none;
+        border: none;
         line-height: 56px;
         border-radius: $border-radius;
     }
 
-    textarea{
+    textarea {
         min-height: 100px;
         resize: none;
         line-height: unset;

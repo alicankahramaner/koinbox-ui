@@ -281,7 +281,47 @@ class CharFilter implements ModuleType {
             }
         })
     }
+}
 
+class TabModule implements ModuleType {
+    selector: string = '.tab-wrapper';
+
+    init() {
+        document.querySelectorAll(this.selector).forEach(tabWrapper => {
+            tabWrapper.querySelectorAll('.tab-btn').forEach((tabBtn, index) => {
+                if (index === 0) {
+                    this.proccess(tabBtn);
+                }
+                tabBtn.addEventListener('click', this.onClickTabBtn.bind(this));
+            });
+
+        })
+    }
+
+    onClickTabBtn(e: any) {
+        this.proccess(e.currentTarget);
+    }
+
+    proccess(thisBtn: any) {
+        let wrapper = thisBtn.closest('.tab-wrapper');
+        wrapper.querySelectorAll('.tab-btn').forEach((btn: any) => {
+            if (btn === thisBtn) {
+                btn.classList.add('active')
+                return;
+            }
+
+            btn.classList.remove('active')
+        })
+
+        wrapper.querySelectorAll('.tab-item').forEach((tab: any) => {
+            let t: HTMLDivElement = tab as any;
+            if (t.dataset.tab === thisBtn.dataset.target) {
+                t.classList.add('active');
+                return;
+            }
+            t.classList.remove('active');
+        });
+    }
 }
 
 // Init App
@@ -293,5 +333,6 @@ const app = new App([
     new ActiveToggle(),
     new CoinCompare(),
     new PhoneInput(),
-    new CharFilter()
+    new CharFilter(),
+    new TabModule()
 ])

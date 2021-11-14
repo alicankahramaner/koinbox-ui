@@ -39,3 +39,17 @@ mixin buttonRadio(label,name,value,checked)
     .button-radio
         input(type="radio" name=name value=value checked=checked)
         span= label
+
+mixin dataLabel(label, dataOne, dataTwo,className='')
+    span(class='data-label ' + className)
+        span= label
+        span.values 
+            if(dataOne)
+                span= dataOne
+            if(dataTwo)
+                span= dataTwo
+mixin percentTag(value,direction)
+    span(class='percent-tag '+direction)= value
+mixin percentTagFileld(value,direction)
+    span(class='percent-tag filled '+direction)= value
+        
