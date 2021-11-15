@@ -239,6 +239,10 @@
     // Wide
     &.wide {
         max-height: 100vh;
+        .card-content {
+            flex-basis: 100%;
+        }
+        
         figure {
             flex-basis: 40%;
             height: 300px;
