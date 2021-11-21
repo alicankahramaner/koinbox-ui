@@ -10,3 +10,13 @@ $brand-blue: #3772ff;
 $brand-darkBlue: #18203f;
 $btn-foreground: #898f99;
 $brand-gray: #898f99;
+
+$phoneSize: 1200px;
+$tabletSize: 1280px;
+
+
+$z-index: 1000;
+$layoutLeftZindex:$z-index + 1;
+$menuZIndex: $z-index + 1;
+$modalZIndex: $z-index + 1;
+

@@ -1,48 +1,52 @@
 extends components/layout.pug 
 block content
   .row 
-    .col-6
+    .col-sm-12.col-lg-6
       include components/bigCard.pug
-    .col-6
+    .col-sm-12.col-lg-6
       h2 Bügün Neler Oldu?
       include components/card.pug
       include components/card.pug
       include components/card.pug
   .card-row
     .row 
-      .col-3
-        include components/spaceCard.pug
-      .col-3
+      .col-12
+        h2 Sponsorlu İçerikler
+      .col-6.col-lg-3
         include components/spaceCardEditor.pug
-      .col-3
-        include components/spaceCard.pug
-      .col-3
-        include components/spaceCard.pug
-  .row 
+      .col-6.col-lg-3
+        include components/spaceCardEditor.pug
+      .col-6.col-lg-3
+        include components/spaceCardEditor.pug
+      .col-6.col-lg-3
+        include components/spaceCardEditor.pug
+  .row
     // Content
-    .col-12
+    .col-12.col-lg-9
       h2 Haber Akışı
       include components/cardWide.pug
       include components/cardWide.pug
       include components/cardWideEditor.pug
       include components/cardWide.pug
       include components/cardWide.pug
-      .row 
-        .col-12 
-          - var btnClass ="more"
-          - var btnText = "Daha Fazla Göster"
-          - var btnIcon = "icon-refresh"
-          include components/button.pug
-      // Koinbox TV
-      .row 
-        .col-12 
-          include components/koinboxVideo.pug
+      .col-12 
+        - var btnClass ="more"
+        - var btnText = "Daha Fazla Göster"
+        - var btnIcon = "icon-refresh"
+        include components/button.pug
+    // Ads Side
+    .col-12.col-lg-3
+      img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
+      img(src="/resources/images/adsLong.png" alt="" class="img-responsive")
+  .row 
+    .col-12 
+      include components/koinboxVideo.pug
       // Koinpedia
       .row
         .col-12
           .content-card 
             .content-card-header
-              h2.title Koinpedia
+              h2 Koinpedia
             .content-card-body.flex-justify 
               +tagButton("Koin 101","briefcase","blue")
               +tagButton("Kripto Nasıl Alınır?","teacher","green")
@@ -51,99 +55,98 @@ block content
               +tagButton("NFT Borsaları","gallery","pink")
               +tagButton("NFT Nasıl Yapılır?","gallery-edit","purple")
               +tagButton("ColdWallet Nedir?","wallet","blue")
-      // SpaceCardBigs
-      .row
-        .col-4
-          include components/spaceCardBig.pug
-        .col-4
-          include components/spaceCardBig.pug
-        .col-4
-          include components/spaceCardBig.pug
-        .col-4
-          include components/spaceCardBig.pug
-        .col-4
-          include components/spaceCardBig.pug
-        .col-4
-          include components/spaceCardBig.pug
-      .row
-        .content-card 
-          .content-card-header
-            h2.title Etkinlinler
-            .content-card-header-actions
-              +button("Tüm Etkinlikler",null,"ghost")
-          .content-card-body
-            .row.search-area
-              .col-2
-                +select("Kategori")
-              .col-2
-                +select("Pozisyon")
-              .col-4.content-center
-                input(type="text" placeholder="Ara")
-              .col-2
-                +select("Sırala")
-              .col-2.content-right
-                +button(null,'arrow-square-right','form')
-                +button(null,'arrow-square-left','form')
-            .row
-              .col-4 
-                include components/coinVote.pug
-              .col-4 
-                include components/coinVote.pug
-              .col-4 
-                include components/coinVote.pug
-            .row
-              .filter-area
-                .filter-area-filters
-                  button(data-val="all").btn.borderred.primary.filter-btn.active Tümü
-                  button(data-val="coin").btn.borderred.primary.filter-btn Coin
-                  button(data-val="nft").btn.borderred.primary.filter-btn NFT
-                  button(data-val="token").btn.borderred.primary.filter-btn Token
-                  button(data-val="projects").btn.borderred.primary.filter-btn Projeler
-                .filter-area-body
-                  .row
-                    .col-4.filter-item.coin
-                      +filterCard('coin')
-                    .col-4.filter-item.nft
-                      +filterCard('nft')
-                    .col-4.filter-item.token
-                      +filterCard('token')
-                    .col-4.filter-item.coin
-                      +filterCard('coin')
-                    .col-4.filter-item.projects
-                      +filterCard('projects')
-                    .col-4.filter-item.token
-                      +filterCard('token')
-                    .col-4.filter-item.coin
-                      +filterCard('coin')
-                    .col-4.filter-item.coin
-                      +filterCard('coin')
-                    .col-4.filter-item.nft
-                      +filterCard('nft')
-      // Haber Akışı
-      .row
-        .col-12
-          .content-card 
-            .content-card-header
-              h2.title Haber Akışı
-            .content-card-body
-              include components/cardWideLarge.pug
-              include components/cardWideLarge.pug
-              include components/cardWideLarge.pug
-              include components/cardWideLarge.pug
-              include components/cardWideLarge.pug
-              include components/cardWideLarge.pug
-              +button("Daha Fazla Göster","refresh")
-      .row
-        .col-12 
-          h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
-        .col-12
-          h3 Kripto Para Nedir?
-          .ghost-content
-            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
-            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
-            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+  // SpaceCardBigs
+  .row
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+    .col-12.col-lg-3
+      include components/spaceCardBig.pug
+  .row
+    .content-card 
+      .content-card-header
+        h2 Etkinlinler
+        .content-card-header-actions
+          +button("Tüm Etkinlikler",null,"ghost")
+      .content-card-body
+        .row
+          .col-12
+            .search-area
+              .row
+                .col-12.col-lg-2
+                  +select("Kategori")
+                .col-12.col-lg-2
+                  +select("Pozisyon")
+                .col-12.col-lg-4.content-center
+                  input(type="text" placeholder="Ara")
+                .col-12.col-lg-2
+                  +select("Sırala")
+                .col-12.col-lg-2.content-right
+                  +button(null,'arrow-square-right','form')
+                  +button(null,'arrow-square-left','form')
+        .row
+          .col-12.col-lg-4
+            include components/coinVote.pug
+          .col-12.col-lg-4
+            include components/coinVote.pug
+          .col-12.col-lg-4
+            include components/coinVote.pug
+        .row
+          .filter-area
+            .filter-area-filters
+              button(data-val="all").btn.borderred.primary.filter-btn.active Tümü
+              button(data-val="coin").btn.borderred.primary.filter-btn Coin
+              button(data-val="nft").btn.borderred.primary.filter-btn NFT
+              button(data-val="token").btn.borderred.primary.filter-btn Token
+              button(data-val="projects").btn.borderred.primary.filter-btn Projeler
+            .filter-area-body
+              .row
+                .col-12.col-lg-4.filter-item.coin
+                  +filterCard('coin')
+                .col-12.col-lg-4.filter-item.nft
+                  +filterCard('nft')
+                .col-12.col-lg-4.filter-item.token
+                  +filterCard('token')
+                .col-12.col-lg-4.filter-item.coin
+                  +filterCard('coin')
+                .col-12.col-lg-4.filter-item.projects
+                  +filterCard('projects')
+                .col-12.col-lg-4.filter-item.token
+                  +filterCard('token')
+                .col-12.col-lg-4.filter-item.coin
+                  +filterCard('coin')
+                .col-12.col-lg-4.filter-item.coin
+                  +filterCard('coin')
+                .col-12.col-lg-4.filter-item.nft
+                  +filterCard('nft')
+  // Haber Akışı
+  .row
+    .col-12
+      .content-card 
+        .content-card-header
+          h2 Haber Akışı
+        .content-card-body
+          include components/cardWideLarge.pug
+          include components/cardWideLarge.pug
+          include components/cardWideLarge.pug
+          include components/cardWideLarge.pug
+          include components/cardWideLarge.pug
+          include components/cardWideLarge.pug
           +button("Daha Fazla Göster","refresh")
-    // Ads Side
-    .col-3
-      img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
-      img(src="/resources/images/adsLong.png" alt="" class="img-responsive")
+  .row
+    .col-12 
+      h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+    .col-12
+      h3 Kripto Para Nedir?
+      .ghost-content
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+        p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
+      +button("Daha Fazla Göster","refresh")

@@ -58,7 +58,7 @@ block content
     // Chart and Sidebar
     .row
         // Coin Chart
-        .col-8
+        .col-12.col-lg-8
             .tab-wrapper
                 .tabs
                     a(class='btn primary-outline tab-btn' data-target="Genel") Genel
@@ -72,7 +72,7 @@ block content
                         include components/coinChart.pug
                         .row
                             .col-12 
-                                h2.page-title BTC Fiyatı Canlı Veri
+                                h2 BTC Fiyatı Canlı Veri
                             .col-12
                                 h3 Kripto Para Nedir?
                             .ghost-content
@@ -96,7 +96,7 @@ block content
 
 
         // Coin Stats
-        .col-4
+        .col-12.col-lg-4
             include components/coinConverterSmall.pug
             .ghost-box
                 h3 Bitcoin İstatistikleri
@@ -117,7 +117,7 @@ block content
     // Other Coins
     .row.page
         .col-12
-            h3.detail-title Diğer Kripto Paralar
+            h3 Diğer Kripto Paralar
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos labore dolor doloremque, maiores officiis earum asperiores inventore harum totam, laborum mollitia nulla unde veniam ex enim voluptate possimus sunt ut.
         include components/coinListGrid.pug
 
@@ -126,24 +126,24 @@ block content
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Bitcoin Haberleri
+                    h2 Bitcoin Haberleri
                 .content-card-body
                     .row
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBig.pug
     .row
         .col-12 
-            h2.page-title Kripto Para Haberleri Sıkça Sorulan Sorular
+            h2.page Kripto Para Haberleri Sıkça Sorulan Sorular
         .col-12
             h3 Kripto Para Nedir?
             .ghost-content

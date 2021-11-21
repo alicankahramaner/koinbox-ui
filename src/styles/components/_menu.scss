@@ -5,11 +5,22 @@
     display: flex;
     flex-direction: column;
     width: inherit;
+    z-index: $menuZIndex;
+    transition: all ease-in-out .3s;
+    
     .logo {
         display: flex;
         justify-content: space-between;
         margin-bottom: 23px;
         align-items: center;
+        .user-menu{
+            display: none;
+        }
+
+        .hamburger{
+            display: none;
+        }
+
         figure {
             margin: 0;
             height: 24px;
@@ -42,7 +53,6 @@
         margin-bottom: 24px;
         position: relative;
         border-radius: $input-radius;
-        border: 2px solid #f2f3f4;
         height: 40px;
 
         input[type="text"] {
@@ -50,11 +60,13 @@
             height: 40px;
             line-height: 40px;
             font-size: 12px;
-            color: #898f99;
             font-weight: 500;
+            appearance: none;
             font-family: "Inter";
             text-indent: 15px;
             outline: none;
+            border-color:#F2F3F4;
+            color:#9aa0a8;
             background-color: unset;
         }
 
@@ -153,79 +165,184 @@
         color: #898f99;
         margin-bottom: 10px;
     }
-}
 
-.menu-collapsed {
-    .menu {
-        padding: 34px 21px;
+    .hamburger {
+        background: none;
+        border: none;
+        appearance: none;
+        width: 32px;
+        height: 32px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        display: none;
+        &:before,
+        &:after {
+            content: "";
+            display: none;
+            display: block;
+            width: 80%;
+            height: 3px;
+            background: $brand-blue;
+            position: absolute;
+            top: 50%;
 
-        .logo {
-            figure {
-                img {
-                    &:first-child {
-                        opacity: 0;
-                        width: 0;
-                        height: 0;
-                    }
-                }
-                .icon {
-                    opacity: 1;
-                }
-            }
+            transition: all ease-in-out 0.3s;
+        }
+        &:before {
+            margin-top: -5px;
         }
 
-        .search-form {
-            input {
-                width: 0;
-                opacity: 0;
-                padding: 0;
-            }
-
-            button {
-                margin-left: auto;
-                margin-right: auto;
-                left: 0;
-                right: 0;
-            }
+        &:after {
+            margin-top: 5px;
         }
+    }
 
-        ul {
-            li {
-                a {
-                    justify-content: center;
-                }
+    @media (max-width: $phoneSize) {
+        height: 80px;
+        overflow: hidden;
+        max-height: 80px;
+        padding: 25px 15px;
+        border-radius: 0;
+        // box-shadow: 0px 0px 10px $gray-600;
+
+        
+
+        .logo{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            
+            .hamburger{
+                display: inline-flex;
             }
-        }
+            .user-menu{
+                display: block;
+                margin:0;
 
-        & > ul {
-            & > li.sub {
-                & > a {
-                    &::before {
-                        content: unset;
-                    }
-                    span:not(:first-child) {
-                        display: none;
-                    }
-                }
-
-                & > ul {
-                    li {
-                        span {
-                            &:not([class*="icon-"]) {
-                                display: none;
+                ul{
+                    li{
+                        a{
+                            &:after{
+                                content:none;
                             }
                         }
                     }
                 }
             }
+            figure{
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+                img{
+                    display: inline-block;
+                    margin:0px auto;
+                }                
+            }
         }
 
-        .full-content {
+        button:not(.hamburger){
             display: none;
         }
+    }
+}
 
-        .collapse-menu{
-            transform: rotate(-180deg);
+.menu-collapsed {
+    @media (max-width: $phoneSize) {
+        .hamburger {
+            &:before {
+                transform: rotate(-45deg);
+                margin: 0;
+            }
+
+            &:after {
+                transform: rotate(45deg);
+                margin: 0;
+            }
+        }
+
+        .menu{
+            height: 100%;
+            max-height: 100vh;
+        }
+    }
+
+    @media (min-width: 1300px) {
+        .menu {
+            padding: 34px 21px;
+
+            .logo {
+                figure {
+                    img {
+                        &:first-child {
+                            opacity: 0;
+                            width: 0;
+                            height: 0;
+                        }
+                    }
+                    .icon {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .search-form {
+                input {
+                    width: 0;
+                    opacity: 0;
+                    padding: 0;
+                }
+
+                button {
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                }
+            }
+
+            ul {
+                li {
+                    a {
+                        justify-content: center;
+                    }
+                }
+            }
+
+            & > ul {
+                & > li.sub {
+                    & > a {
+                        &::before {
+                            content: unset;
+                        }
+                        span:not(:first-child) {
+                            display: none;
+                        }
+                    }
+
+                    & > ul {
+                        li {
+                            span {
+                                &:not([class*="icon-"]) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .full-content {
+                display: none;
+            }
+
+            .collapse-menu {
+                transform: rotate(-180deg);
+            }
         }
     }
 }

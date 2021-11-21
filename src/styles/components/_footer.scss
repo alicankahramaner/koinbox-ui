@@ -16,13 +16,17 @@
             color: #898f99;
             line-height: 26px;
             a {
-                font-weight: 600;
+                font-weight: 500;
                 font-size: 16px;
             }
 
             &:hover {
                 color: $white;
             }
+        }
+
+        @media (max-width:$phoneSize) {
+            margin-bottom:10px;
         }
     }
 

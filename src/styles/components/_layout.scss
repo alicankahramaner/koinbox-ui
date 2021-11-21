@@ -1,7 +1,7 @@
 .layout {
     width: 100%;
     max-width: 1920px;
-    margin:0px auto;
+    margin: 0px auto;
     display: flex;
     &-left {
         flex-basis: 280px;
@@ -11,6 +11,7 @@
         padding-left: 0.75rem;
         padding-top: 24px;
         transition: all ease-in-out 0.3s;
+        z-index: $layoutLeftZindex;
     }
 
     &-center {
@@ -18,15 +19,32 @@
         flex-basis: 92%;
     }
 
-    &-right{
+    &-right {
         flex-basis: 6%;
         position: sticky;
-        top:0;
+        top: 0;
         z-index: 1000;
         transition: all ease-in-out 0.3s;
         padding: $body-padding;
         padding-right: 0.75rem;
         height: 100vh;
+    }
+
+    @media (max-width: $phoneSize) {
+        flex-direction: column;
+        padding: 0px 12px;
+        &-left {
+            height: unset;
+            flex-basis: unset;
+            padding-left: 0;
+            padding-top: 0;
+            margin:0px -12px;
+        }
+
+        &-right {
+            padding-right: 0;
+            display: none;
+        }
     }
 }
 
@@ -34,6 +52,12 @@
     .layout {
         &-left {
             flex-basis: 120px;
+        }
+
+        @media (max-width: $phoneSize) {
+            &-left {
+                flex-basis: unset;
+            }
         }
     }
 }

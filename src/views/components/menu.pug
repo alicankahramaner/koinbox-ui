@@ -1,11 +1,26 @@
 <!-- Menu:Start -->
 header.menu
     .logo 
+        .user-menu
+            ul
+                li
+                    a(href="javascript:;" class="toggle-target" data-target="#user-popup")
+                        //- span.icon-s-user 
+                        img(src="/resources/images/user.png" alt="")
+                    ul 
+                        li 
+                            a(href="#") Ayarlar
+                        li 
+                            a(href="#") Kaydedilenler
+                        li 
+                            a(href="#") Çıkış
+
         figure 
             img(src="/resources/images/logo.png" alt="koinbox")
             img(src="/resources/images/icon.png" class="icon" alt="koinbox")
         button.collapse-menu
             span.icon-arrow-left
+        button.hamburger.collapse-menu
     form.search-form(action="") 
         input(type="text" placeholder="Ara")
         button(type="submit")

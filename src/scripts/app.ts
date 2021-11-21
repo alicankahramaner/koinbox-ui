@@ -48,9 +48,9 @@ class MenuCollapseModule implements ModuleType {
     }
 
     init() {
-        var collapseButton = document.querySelector(this.selector);
-        collapseButton.addEventListener('click', this.onClickButton)
-
+        document.querySelectorAll(this.selector).forEach(btn => {
+            btn.addEventListener('click', this.onClickButton)
+        });
     }
 
     onClickButton() {
@@ -132,7 +132,7 @@ class InputRange implements ModuleType {
     create(item: any) {
         var slider2 = new (window as any).rSlider({
             target: item,
-            values: ['1dk', '3dk', '5dk', '10dk', '15dk', '20dk', '25dk', '+30dk'],
+            values: ['1dk', '3dk', '5dk', '10dk', '15dk', '25dk'],
             range: false,
             set: ['5dk'],
             tooltip: false,
@@ -324,6 +324,26 @@ class TabModule implements ModuleType {
     }
 }
 
+class ActiveToggleTarget implements ModuleType {
+    selector: string = '.toggle-target';
+
+    init() {
+        document.querySelectorAll(this.selector).forEach(btn => {
+            btn.addEventListener('click', this.onClick);
+        })
+    }
+
+    onClick(e: any) {
+        let source:HTMLElement = e.currentTarget;
+        if(!source || !source.dataset.target) return;
+        let target = source.dataset.target;
+        let targethtml = document.querySelector(target);
+        if(!targethtml) return;
+        targethtml.classList.toggle('show');
+    }
+
+}
+
 // Init App
 const app = new App([
     new MenuCollapseModule(),
@@ -334,5 +354,6 @@ const app = new App([
     new CoinCompare(),
     new PhoneInput(),
     new CharFilter(),
-    new TabModule()
+    new TabModule(),
+    new ActiveToggleTarget()
 ])

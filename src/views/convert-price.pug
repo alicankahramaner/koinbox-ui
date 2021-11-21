@@ -4,14 +4,14 @@ block content
         .col-12
             include components/breadcrump.pug
     .row
-        .col-8
+        .col-12.col-lg-8
             h1.detail-title Kripto Para Dönüştürücü
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque dolorem porro vitae ut perferendis dolores pariatur voluptas perspiciatis fugit esse minima culpa ratione aliquid quibusdam iure quia, aut provident aspernatur?
             p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque dolorem porro vitae ut perferendis dolores pariatur voluptas perspiciatis fugit esse minima culpa ratione aliquid quibusdam iure quia, aut provident aspernatur?
             include components/coinConverter.pug
 
 
-        .col-4
+        .col-12.col-lg-4
             .section-block
                 h3.aside-title Popüler İçerikler 
                 include components/listPost.pug
@@ -23,20 +23,20 @@ block content
     .row
         .content-card
             .content-card-header
-                h2.title Bitcoin Haberleri
+                h2 Bitcoin Haberleri
             .content-card-body
                 .row
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
-                    .col-4
+                    .col-12.col-lg-4
                         +filterCard('coin')
     .row
         .col-12 

@@ -1,7 +1,7 @@
 .card {
     border-radius: $border-radius;
     background-color: $white;
-    padding: 30px 23px;
+    padding: 24px;
     display: flex;
     position: relative;
     transition: all ease-in-out 0.3s;
@@ -28,6 +28,11 @@
         padding-right: 16px;
     }
 
+    p {
+        font-weight: 500;
+        color: $brand-gray;
+    }
+
     &:not(.big) {
         margin: 12px 0px;
         border: 2px solid transparent;
@@ -35,6 +40,17 @@
         a {
             text-decoration: none;
             display: flex;
+            @media (max-width: $phoneSize) {
+                flex-direction: column;
+
+                figure {
+                    width: 100%;
+                    margin-top: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
         &:before {
             @include absoluteFlag();
@@ -42,6 +58,10 @@
 
         &:hover {
             border-color: #3772ff;
+        }
+
+        @media (max-width: $phoneSize) {
+            max-height: unset;
         }
     }
 
@@ -60,9 +80,11 @@
         font-size: 12px;
         font-weight: normal;
         color: #a9abb0;
-        padding: 8px 0px;
+        padding: 16px 0px;
         display: block;
-
+        @media (max-width: $phoneSize) {
+            margin-top: 16px;
+        }
         .cat {
             margin-right: 16px;
         }
@@ -94,7 +116,7 @@
     }
 
     article {
-        margin-top: 8px;
+        // margin-top: 8px;
         font-size: 14px;
         font-weight: 500;
         color: #898f99;
@@ -129,6 +151,12 @@
 
         article {
             margin-bottom: 16px;
+        }
+
+        @media (max-width: $phoneSize) {
+            figure {
+                margin: 16px 0;
+            }
         }
     }
 
@@ -177,8 +205,31 @@
         flex-wrap: nowrap;
         max-height: unset;
         padding: 0;
-        line-height: 24px;
+        font-weight: 600;
+        // line-height: 24px;
         border: unset;
+
+        &.editor {
+            p {
+                transition: all ease-in-out 0.3s;
+                font-weight: 600;
+                font-size: 14px;
+                color: $brand-darkBlue;
+            }
+            figure {
+                border: 2px solid transparent;
+                transition: all ease-in-out 0.3s;
+            }
+            &:hover {
+                p {
+                    color: #ffaf37;
+                }
+
+                figure {
+                    border-color: #ffaf37;
+                }
+            }
+        }
 
         figure {
             width: auto;
@@ -242,10 +293,11 @@
         .card-content {
             flex-basis: 100%;
         }
-        
+
         figure {
-            flex-basis: 40%;
-            height: 300px;
+            flex-basis: 270px;
+            height: 156px;
+            width: 270px;
             img {
                 width: 100%;
             }
@@ -253,9 +305,22 @@
 
         &.large {
             max-height: unset;
+            header {
+                .card-title {
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 30px;
+                }
+            }
             figure {
-                flex-basis: 50%;
+                flex-basis: 522px;
                 height: 300px;
+                width: 522px;
+                @media (max-width: $phoneSize) {
+                    height: auto !important;
+                    flex-basis: unset;
+                    width: 100%;
+                }
             }
         }
 
@@ -270,12 +335,28 @@
                 }
             }
         }
+
+        @media (max-width: $phoneSize) {
+            .card-content {
+                flex-basis: unset !important;
+            }
+
+            figure {
+                flex-basis: auto !important;
+            }
+        }
     }
 
     // Category
     &.category {
         figure {
             height: 400px !important;
+        }
+    }
+
+    @media (max-width: $phoneSize) {
+        figure {
+            margin: 16px 0;
         }
     }
 }

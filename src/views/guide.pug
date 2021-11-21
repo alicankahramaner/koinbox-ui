@@ -8,7 +8,7 @@ block content
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Koinpedia
+                    h2 Koinpedia
                 .content-card-body.flex-justify 
                     +tagButton("Koin 101","briefcase","blue")
                     +tagButton("Kripto Nasıl Alınır?","teacher","green")
@@ -22,27 +22,27 @@ block content
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Güncel Eğitimler
+                    h2 Güncel Eğitimler
                 .content-card-body
                     .row
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
     // Diğer 
     .row
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Diğer
+                    h2 Diğer
                 .content-card-body
                     .blue-area
                         .filter-area
@@ -54,51 +54,51 @@ block content
                                 button(data-val="projects").btn.borderred.primary.filter-btn Projeler
                             .filter-area-body
                                 .row
-                                    .col-4.filter-item.coin
+                                    .col-12.col-lg-4.filter-item.coin
                                         +filterCard('coin')
-                                    .col-4.filter-item.nft
+                                    .col-12.col-lg-4.filter-item.nft
                                         +filterCard('nft')
-                                    .col-4.filter-item.token
+                                    .col-12.col-lg-4.filter-item.token
                                         +filterCard('token')
-                                    .col-4.filter-item.coin
+                                    .col-12.col-lg-4.filter-item.coin
                                         +filterCard('coin')
-                                    .col-4.filter-item.projects
+                                    .col-12.col-lg-4.filter-item.projects
                                         +filterCard('projects')
-                                    .col-4.filter-item.token
+                                    .col-12.col-lg-4.filter-item.token
                                         +filterCard('token')
-                                    .col-4.filter-item.coin
+                                    .col-12.col-lg-4.filter-item.coin
                                         +filterCard('coin')
-                                    .col-4.filter-item.coin
+                                    .col-12.col-lg-4.filter-item.coin
                                         +filterCard('coin')
-                                    .col-4.filter-item.nft
+                                    .col-12.col-lg-4.filter-item.nft
                                         +filterCard('nft')
     // Güncel Eğitimler
     .row
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Güncel Eğitimler
+                    h2 Güncel Eğitimler
                 .content-card-body
                     .row
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
     // Güncel Eğitimler
     .row
         .col-12
             .content-card 
                 .content-card-header
-                    h2.title Güncel Eğitimler
+                    h2 Güncel Eğitimler
                 .content-card-body
                     .row
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
-                        .col-4
+                        .col-12.col-lg-4
                             include components/spaceCardBigWhite.pug
     .row
         .col-12 
@@ -109,4 +109,4 @@ block content
                 p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
                 p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
                 p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
-                +button("Daha Fazla Göster","refresh")
+            +button("Daha Fazla Göster","refresh")

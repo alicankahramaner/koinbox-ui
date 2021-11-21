@@ -11,8 +11,9 @@
         font-weight: 600;
         color: $white;
         line-height: 21px;
-        margin-top: 24px;
+        margin-top:0;
         font-size: 18px;
+        padding:10px 0px;
     }
 
     &-info {
@@ -38,6 +39,14 @@
         .video {
             flex-shrink: 100%;
             margin: 0px 9px;
+        }
+
+        @media (max-width:$phoneSize) {
+            overflow-x: scroll;
+            .video{
+                min-width: 85%;
+                margin-right: 15px;
+            }
         }
     }
 }

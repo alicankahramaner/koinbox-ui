@@ -10,13 +10,13 @@ block content
             .col-12
                 .search-area
                     .row
-                        .col-8
+                        .col-12.col-lg-8
                             .char-filter-chars
                                 each val in ['#','A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'Y', 'Z']
                                     a(href="javascript:;" data-char=val).btn.ghost.char-filter-btn= val
-                        .col-2
+                        .col-12.col-lg-2
                             input(type="text" placeholder="Ara")
-                        .col-2
+                        .col-12.col-lg-2
                             +select('Sırala')
         .row
             .col-12
