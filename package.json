@@ -5,7 +5,8 @@
   "main": "gulpfile.ts",
   "scripts": {
     "start": "cross-env NODE_ENV=development gulp",
-    "build": "cross-env NODE_ENV=production gulp"
+    "build": "cross-env NODE_ENV=production gulp",
+    "deploy": "firebase deploy"
   },
   "author": {
     "email": "alicankahramaner@gmail.com",
