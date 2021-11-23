@@ -1,18 +1,18 @@
 @mixin gridStyle() {
-    grid-template-columns: 15px repeat(7, 180px);
+    display: grid;
+    grid-template-columns: 15px repeat(7, minmax(150px, 1fr));
+    position: static;
 }
 .coin-list-grid {
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: visible;
     flex-wrap: nowrap;
-
+    position: relative;
     .coin-list-head {
-        display: grid;
         margin-bottom: 10px;
         padding: 0 22px;
-        flex-wrap: wrap;
-        max-width: 100vw;
         @include gridStyle();
         span {
             padding: 16px 0px;
@@ -23,19 +23,15 @@
     }
 
     .coin-list-body {
-        display: flex;
-        flex-direction: column;
-        max-width: max-content;
         .coin-list-item {
             border: 2px solid #dddfe2;
             border-radius: $border-radius;
             padding: 30px 22px;
             margin-bottom: 8px;
-            display: grid;
-            flex-wrap: wrap;
-            width: max-content;
             @include gridStyle();
             position: relative;
+            min-width: max-content;
+            width: 100%;
             & > span {
                 display: flex;
                 align-items: center;
@@ -92,17 +88,15 @@
                 }
             }
 
-            & > .percent{
-                &.up{
-                    color:#32D176;
+            & > .percent {
+                &.up {
+                    color: #32d176;
                 }
 
-                &.down{
-                    color:#FF3737;
+                &.down {
+                    color: #ff3737;
                 }
             }
-
-
 
             & > span,
             & > div {

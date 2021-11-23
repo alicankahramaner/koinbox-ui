@@ -1,7 +1,7 @@
 .card {
     border-radius: $border-radius;
     background-color: $white;
-    padding: 24px;
+    padding: 16px;
     display: flex;
     position: relative;
     transition: all ease-in-out 0.3s;
@@ -69,7 +69,7 @@
         .card-title {
             padding: 0;
             font-weight: 600;
-            font-size: 18px;
+            font-size: 16px;
             color: #18203f;
             margin: 0;
             line-height: 19px;
@@ -80,7 +80,7 @@
         font-size: 12px;
         font-weight: normal;
         color: #a9abb0;
-        padding: 16px 0px;
+        padding: 8px 0px;
         display: block;
         @media (max-width: $phoneSize) {
             margin-top: 16px;
@@ -119,8 +119,8 @@
         // margin-top: 8px;
         font-size: 14px;
         font-weight: 500;
+        // border:1px solid red;
         color: #898f99;
-        line-height: 24px;
     }
 
     nav {
@@ -134,16 +134,17 @@
 
     // Big
     &.big:not(.space) {
-        min-height: 638px;
+        min-height: 596px;
         display: block;
         .card-title {
-            font-size: 24px;
+            font-size: 21px;
             line-height: 29px;
         }
 
         figure {
             height: 300px;
             width: 100%;
+            margin-bottom:16px;
             img {
                 width: 100%;
             }
@@ -295,9 +296,9 @@
         }
 
         figure {
-            flex-basis: 270px;
-            height: 156px;
-            width: 270px;
+            flex-basis: 240px;
+            height: 126px;
+            width: 240px;
             img {
                 width: 100%;
             }

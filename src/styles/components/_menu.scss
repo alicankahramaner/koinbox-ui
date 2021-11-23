@@ -1,28 +1,37 @@
 .menu {
-    padding: 34px 15px;
+    padding: 28px 12px;
     background-color: $white;
-    border-radius: $border-radius;
+    // border-radius: $border-radius;
     display: flex;
     flex-direction: column;
     width: inherit;
     z-index: $menuZIndex;
-    transition: all ease-in-out .3s;
-    
+    transition: all ease-in-out 0.3s;
+    height: 100%;
+    overflow: hidden;
+
+    &:hover{
+        overflow-y: scroll;
+    }
+
     .logo {
         display: flex;
         justify-content: space-between;
         margin-bottom: 23px;
         align-items: center;
-        .user-menu{
+        .user-menu {
             display: none;
         }
 
-        .hamburger{
+        .hamburger {
             display: none;
         }
 
         figure {
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 24px;
             flex-basis: 100%;
             transition: all ease-in-out 0.3s;
@@ -63,10 +72,10 @@
             font-weight: 500;
             appearance: none;
             font-family: "Inter";
-            text-indent: 15px;
+            // text-indent: 5px;
             outline: none;
-            border-color:#F2F3F4;
-            color:#9aa0a8;
+            border-color: #f2f3f4;
+            color: #9aa0a8;
             background-color: unset;
         }
 
@@ -90,7 +99,7 @@
             a {
                 display: flex;
                 font-weight: 500;
-                font-size: 16px;
+                font-size: 14px;
                 color: #18203f;
                 text-decoration: none;
                 align-items: center;
@@ -112,12 +121,18 @@
                 }
                 a {
                     font-weight: 500;
-                    font-size: 16px;
+                    font-size: 14px;
                     &:hover,
                     &.active {
                         font-weight: 600;
                         [class*="icon-"] {
                             filter: saturate(13);
+                        }
+                    }
+
+                    span {
+                        &:not([class*="icon-"]) {
+                            font-size: inherit;
                         }
                     }
                 }
@@ -126,6 +141,7 @@
                 & > a {
                     font-size: 12px;
                     font-weight: 600;
+                    text-transform: uppercase;
                     color: #898f99;
                     &::before {
                         @include sprite($icon-arrow-square-down);
@@ -133,7 +149,7 @@
                         display: block;
                         position: absolute;
                         right: 0;
-                        transform: rotate(90deg);
+                        transform: rotate(0deg);
                     }
                 }
 
@@ -145,9 +161,9 @@
 
                 &.show {
                     & > a {
-                        color: $brand-blue;
+                        // color: $brand-blue;
                         &::before {
-                            transform: rotate(0deg);
+                            transform: rotate(180deg);
                         }
                     }
                     & > ul {
@@ -209,43 +225,41 @@
         border-radius: 0;
         // box-shadow: 0px 0px 10px $gray-600;
 
-        
-
-        .logo{
+        .logo {
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
             justify-content: center;
-            
-            .hamburger{
+
+            .hamburger {
                 display: inline-flex;
             }
-            .user-menu{
+            .user-menu {
                 display: block;
-                margin:0;
+                margin: 0;
 
-                ul{
-                    li{
-                        a{
-                            &:after{
-                                content:none;
+                ul {
+                    li {
+                        a {
+                            &:after {
+                                content: none;
                             }
                         }
                     }
                 }
             }
-            figure{
+            figure {
                 flex-basis: 100%;
                 display: flex;
                 justify-content: center;
-                img{
+                img {
                     display: inline-block;
-                    margin:0px auto;
-                }                
+                    margin: 0px auto;
+                }
             }
         }
 
-        button:not(.hamburger){
+        button:not(.hamburger) {
             display: none;
         }
     }
@@ -265,7 +279,7 @@
             }
         }
 
-        .menu{
+        .menu {
             height: 100%;
             max-height: 100vh;
         }

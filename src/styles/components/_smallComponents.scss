@@ -331,6 +331,10 @@
         overflow: hidden;
         margin: 0;
         min-height: 440px;
+
+        @media (max-width: $phoneSize) {
+            display: none;
+        }
     }
 }
 
@@ -366,7 +370,7 @@
 .alert {
     padding: 24px;
     display: block;
-    border: 2px solid $brand-blue;
+    border: 2px solid transparent;
     color: $brand-darkBlue;
     font-weight: 600;
     font-size: 18px;
@@ -374,6 +378,12 @@
     border-radius: $border-radius;
     background-color: $white;
     position: relative;
+    transition: all ease-in-out 0.3s;
+    text-decoration: none;
+
+    &:hover {
+        border-color: $brand-blue;
+    }
 
     &::before,
     &::after {
@@ -390,7 +400,7 @@
     padding: 10px 0px;
     .btn {
         margin: 5px;
-        display: inline-block;
+        display: inline-flex;
         width: unset;
     }
 }
@@ -545,6 +555,7 @@
         margin: 0;
         & > a {
             margin-right: 0;
+            width: 100%;
             &:not(:last-child) {
                 margin-bottom: 16px;
             }
@@ -1175,15 +1186,16 @@
         }
     }
 
-    @media (max-width:$phoneSize) {
+    @media (max-width: $phoneSize) {
         flex-direction: column;
-        span.char{
-            margin:0px;
-            padding:0;
+        span.char {
+            margin: 0px;
+            padding: 0;
             font-size: 3rem;
             display: flex;
-            &::before,&::after{
-                content:unset;
+            &::before,
+            &::after {
+                content: unset;
             }
         }
     }
@@ -1192,13 +1204,12 @@
 // Char Filter
 .char-filter-area {
     .char-filter-chars {
-        height: 100%;
+        height: 32px;
         display: flex;
         align-items: center;
 
-       
         a {
-            display: inline-block;
+            display: inline-flex;
             text-decoration: none;
             font-weight: 500;
             font-size: 14px;
@@ -1228,13 +1239,14 @@
             }
         }
 
-        @media (max-width:$phoneSize){
-            overflow: scroll;
-            padding:15px 0;
+        @media (max-width: $phoneSize) {
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding: 30px 0;
 
-            a{
-                &:after{
-                    content:unset
+            a {
+                &:after {
+                    content: unset;
                 }
             }
         }
@@ -1384,16 +1396,16 @@
     width: 100%;
     grid-template-columns: 2fr 1fr 1fr 1fr;
 
-    @media (max-width:$phoneSize) {
+    @media (max-width: $phoneSize) {
         display: flex;
         flex-direction: column;
 
-        .coin-stats-item{
+        .coin-stats-item {
             display: flex;
             justify-content: space-around;
-            padding:16px;
+            padding: 16px;
 
-            .data-label{
+            .data-label {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -1468,10 +1480,19 @@
     .tabs {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         .btn {
             padding: 12px 24px;
             margin-right: 16px;
+        }
+
+        @media (max-width: $phoneSize) {
+            justify-content: center;
+            .btn {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
         }
     }
 
@@ -1684,5 +1705,122 @@
         font-weight: bold;
         display: block;
         color: $brand-darkBlue;
+    }
+}
+
+.read-progress {
+    width: 60px;
+    height: 60px;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    $progress-bar-stroke-width: 2;
+    $progress-bar-size: 60px;
+
+    svg {
+        height: $progress-bar-size;
+        transform: rotate(-90deg);
+        width: $progress-bar-size;
+    }
+
+    .progress-bar__background {
+        fill: none;
+        stroke: #dddfe2;
+        stroke-width: $progress-bar-stroke-width;
+    }
+
+    .progress-bar__progress {
+        fill: none;
+        stroke: #3772ff;
+        stroke-dasharray: 100 100;
+        stroke-dashoffset: 100;
+        stroke-linecap: round;
+        stroke-width: $progress-bar-stroke-width;
+        transition: stroke-dashoffset 1s ease-in-out;
+    }
+    img {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+.app-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: $topZIndex;
+    background: $gray-700;
+    display: none !important;
+    flex-direction: row;
+    color: $white;
+    border-radius: 12px;
+    min-width: max-content;
+    max-width: min-content;
+    
+    &-wrap {
+        padding: 12px;
+        position: relative;
+    }
+
+    .logo {
+        margin:10px;
+    }
+
+    .text {
+        flex-basis: 300px;
+        font-size: 12px;
+        padding: 0px 12px;
+        white-space: pre-wrap;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        min-width: 200px;
+        margin-bottom:10px;
+        strong {
+            display: block;
+        }
+    }
+
+    .app-links {
+        display: inline-flex;
+        align-items: center;
+        a {
+            margin: 0px 5px;
+            flex-basis: calc(50% - 5px);
+            width: calc(50% - 5px);
+            max-width: 120px;
+            img{
+                width: 100%;
+                max-width: 120px;
+            }
+        }
+    }
+
+    .timesbtn {
+        position: absolute;
+        top:5px;
+        right:10px;
+        &:after {
+            color: $white;
+        }
+    }
+    &.show {
+        display: flex !important;
+    }
+
+    @media (max-width: $phoneSize) {
+        max-width: 70vw;
+        min-width: 70vw;
+
+        .app-links {
+            // flex-direction: column;
+            a {
+                // margin: 5px 0px;
+            }
+        }
     }
 }

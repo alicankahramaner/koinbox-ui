@@ -8,15 +8,15 @@
         height: 100vh;
         position: sticky;
         top: 0;
-        padding-left: 0.75rem;
-        padding-top: 24px;
+        // padding-left: 0.75rem;
+        // padding-top: 24px;
         transition: all ease-in-out 0.3s;
         z-index: $layoutLeftZindex;
     }
 
     &-center {
         padding: $body-padding;
-        flex-basis: 92%;
+        flex-basis: 100%;
     }
 
     &-right {

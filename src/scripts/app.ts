@@ -334,20 +334,43 @@ class ActiveToggleTarget implements ModuleType {
     }
 
     onClick(e: any) {
-        let source:HTMLElement = e.currentTarget;
-        if(!source || !source.dataset.target) return;
+        let source: HTMLElement = e.currentTarget;
+        if (!source || !source.dataset.target) return;
         let target = source.dataset.target;
         let targethtml = document.querySelector(target);
-        if(!targethtml) return;
+        if (!targethtml) return;
         targethtml.classList.toggle('show');
     }
 
+}
+
+class ReadProgress implements ModuleType {
+    selector: string = '.read-progress';
+
+    init() {
+        document.addEventListener('scroll', this.calculate)
+    }
+
+    calculate() {
+        let footer = document.querySelector('footer.footer');
+        if (!footer) return;
+        let dc = document.documentElement;
+        let size = (dc.scrollTop / (dc.scrollHeight - window.innerHeight - (footer.getBoundingClientRect().height / 2))) * 100;
+        if (size > 100) {
+            size = 100;
+        }
+        let strokeDashOffsetValue = 100 - (size);
+        let progressBar: HTMLElement = document.querySelector('.js-progress-bar');
+        if (!progressBar) return;
+        progressBar.style.strokeDashoffset = strokeDashOffsetValue.toString();
+    }
 }
 
 // Init App
 const app = new App([
     new MenuCollapseModule(),
     new FilterArea(),
+    new ReadProgress(),
     new MenuDropdown(),
     new InputRange(),
     new ActiveToggle(),
