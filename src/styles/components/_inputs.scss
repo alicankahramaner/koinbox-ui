@@ -135,6 +135,7 @@ textarea {
         background-color: #3772ff;
         border: none;
         margin-top: 1px;
+        transition: all ease-in-out .3s!important;
     }
 
     .rs-bg {
@@ -149,6 +150,7 @@ textarea {
         top: 7px !important;
         margin-left: -8px !important;
         border: none;
+        transition: all ease-in-out .3s!important;
 
         &::before,
         &:after {
@@ -156,7 +158,27 @@ textarea {
         }
     }
 
+    &:hover{
+        .rs-pointer{
+            transform: scale(2);
+        }
+    }
+
+    @media (max-width:$phoneSize) {
+        .rs-pointer{
+            transform: scale(2.5);
+        }
+
+        &:hover{
+            .rs-pointer{
+                transform: scale(2.5);
+            }
+        }
+    
+    }
+
     .rs-scale {
+        display: flex;
         span {
             &::before {
                 content: unset;
