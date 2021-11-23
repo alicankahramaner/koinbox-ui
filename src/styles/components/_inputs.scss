@@ -179,6 +179,7 @@ textarea {
 
     .rs-scale {
         display: flex;
+        justify-content: center;
         span {
             &::before {
                 content: unset;

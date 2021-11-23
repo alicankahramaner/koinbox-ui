@@ -406,7 +406,8 @@
 }
 
 .guide-read-range {
-    width: 95%;
+    padding: 0px 20px;
+    overflow: hidden;
 }
 
 // User Menu
@@ -1760,14 +1761,14 @@
     border-radius: 12px;
     min-width: max-content;
     max-width: min-content;
-    
+
     &-wrap {
         padding: 12px;
         position: relative;
     }
 
     .logo {
-        margin:10px;
+        margin: 10px;
     }
 
     .text {
@@ -1779,7 +1780,7 @@
         justify-content: center;
         flex-direction: column;
         min-width: 200px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
         strong {
             display: block;
         }
@@ -1793,7 +1794,7 @@
             flex-basis: calc(50% - 5px);
             width: calc(50% - 5px);
             max-width: 120px;
-            img{
+            img {
                 width: 100%;
                 max-width: 120px;
             }
@@ -1802,8 +1803,8 @@
 
     .timesbtn {
         position: absolute;
-        top:5px;
-        right:10px;
+        top: 5px;
+        right: 10px;
         &:after {
             color: $white;
         }
