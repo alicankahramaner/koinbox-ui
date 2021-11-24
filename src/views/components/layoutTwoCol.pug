@@ -1,0 +1,50 @@
+include ../mixins.pug
+doctype html  
+html(lang='en')  
+    head
+        title= Title
+        link(rel='stylesheet' href='/styles/style.css')
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        block headscript
+    body
+        .layout.layout-two-col
+            .layout-center
+                .container-fluid
+                    include ./slider.pug
+                    include ./menuHorizontal.pug
+                    main#main-content
+                        block content
+            .layout-right
+                block Side
+                    include userMenu.pug
+    include footer.pug
+    .mobile-modal#user-popup
+        .white-box.p-22
+            .mobile-modal-header
+                button(class="toggle-target" data-target="#user-popup").timesbtn
+            h1 Giriş Yap 
+
+            form(action="#") 
+                .form-item
+                    label E-Posta
+                    input(type="text")
+                .form-item
+                    button(type="submit") Giriş Yap
+            p Bir hesap oluşturarak, Gizlilik Politikamızı ve Hizmet Şartlarımızı kabul etmiş olursunuz. 
+
+            a(href="#" class="sublink") Hesabın yok mu? Kayıt ol
+    .app-widget#app-widget.show
+        .app-widget-wrap
+            button(class="toggle-target" data-target="#app-widget").timesbtn
+            img(src="/resources/images/icon.svg" alt="Koinbox" class="logo")
+            span.text
+                strong Get The Koinbox App
+                span For the best experience, top crypto news and exclusive features download now.
+            .app-links
+                a(href="#")
+                    img(src="/resources/images/appStoreBadge.png" alt="") 
+                a(href="#")
+                    img(src="/resources/images/googlePlayBadge.png" alt="") 
+    block Script
+        script(src='/scripts/app.js')
+

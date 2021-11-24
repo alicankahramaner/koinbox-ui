@@ -46,6 +46,18 @@
             display: none;
         }
     }
+
+    &-two-col{
+        .layout{
+            &-center{
+                flex-basis: 100%;
+            }
+
+            &-right{
+                flex-basis: 6%;
+            }
+        }
+    }
 }
 
 .menu-collapsed {

@@ -10,7 +10,7 @@
     height: 100%;
     overflow: hidden;
 
-    &:hover{
+    &:hover {
         overflow-y: scroll;
     }
 
@@ -182,40 +182,6 @@
         margin-bottom: 10px;
     }
 
-    .hamburger {
-        background: none;
-        border: none;
-        appearance: none;
-        width: 32px;
-        height: 32px;
-        padding: 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        position: relative;
-        display: none;
-        &:before,
-        &:after {
-            content: "";
-            display: none;
-            display: block;
-            width: 80%;
-            height: 3px;
-            background: $brand-blue;
-            position: absolute;
-            top: 50%;
-
-            transition: all ease-in-out 0.3s;
-        }
-        &:before {
-            margin-top: -5px;
-        }
-
-        &:after {
-            margin-top: 5px;
-        }
-    }
 
     @media (max-width: $phoneSize) {
         height: 80px;
@@ -282,6 +248,13 @@
         .menu {
             height: 100%;
             max-height: 100vh;
+        }
+
+        .menu-horizontal{
+            nav{
+                margin-top:20px;
+                height: 100%;
+            }
         }
     }
 
@@ -357,6 +330,71 @@
             .collapse-menu {
                 transform: rotate(-180deg);
             }
+        }
+    }
+}
+
+.menu-horizontal {
+    padding: 21px 32px;
+    display: flex;
+    background: $white;
+    align-items: center;
+    border-radius: $border-radius;
+    margin-bottom: 24px;
+    margin-top: 9px;
+    transition: ease-in-out height .3s;
+    .logo {
+        height: 100%;
+        margin: 0;
+        text-align: left;
+        justify-content: flex-start;
+        display: flex;
+        margin-right: 48px;
+        img {
+            width: auto;
+            height: 24px;
+            float: left;
+        }
+    }
+
+    nav {
+        transition: all ease-in-out .3s;
+        a {
+            display: inline-block;
+            padding-top: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: $brand-darkBlue;
+            padding: 6px 16px 4px 16px;
+        }
+    }
+
+    @media (max-width:$phoneSize){
+        display: grid;
+        grid-template: 'a a' max-content 'bb' max-content;
+        // grid-template-rows: 1fr 1fr;
+
+        .logo{
+            grid-column: 1;
+        }
+
+        .hamburger{
+            grid-column: 2;
+            justify-self: flex-end;
+        }
+
+        nav{
+            grid-row: 2;
+            margin-top:0;
+            max-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            height: 0;
+            justify-self: flex-start;
+            align-self: flex-start;
+            flex-direction: column;
+
         }
     }
 }
