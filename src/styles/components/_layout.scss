@@ -17,6 +17,9 @@
     &-center {
         padding: $body-padding;
         flex-basis: 100%;
+        & > .container-fluid{
+            width: 95%;
+        }
     }
 
     &-right {
