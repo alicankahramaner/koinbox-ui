@@ -1,0 +1,207 @@
+.dark {
+    background-color: #1e2023;
+
+    [class*="fa-"] {
+        color: $white !important;
+    }
+
+    .coin-compare-convert {
+        [class*="fa-"] {
+            color: $brand-gray !important;
+        }
+    }
+
+    .coin-converter-header > span {
+        color: $brand-blue;
+    }
+
+    .search-area {
+        background-color: #18191c;
+        border-color: $gray-600;
+    }
+
+    .coin-vote {
+        background-color: #18191c;
+        .coin-icon {
+            background-color: $gray-800;
+            border-color: $brand-blue;
+        }
+        .coin-name {
+            color: $gray-600;
+        }
+
+        .status-label {
+            strong {
+                color: $gray-600 !important;
+            }
+        }
+    }
+
+    .slider {
+        background-color: #18191c;
+
+        &::after,
+        &::before {
+            background: #18191c !important;
+            box-shadow: #18191c 0px 0px 10px 6px;
+        }
+    }
+
+    .user-menu {
+        background-color: #18191c;
+
+        .isax {
+            color: $white;
+        }
+    }
+
+    .btn:not(.ghost):not(.approve):not(.decline):not(.lightblue):not(.square):not(.primary):not(.primary-outline) {
+        background-color: #18191c;
+        .isax {
+            color: $btn-foreground;
+        }
+    }
+
+    .menu {
+        background-color: #18191c;
+
+        figure {
+            img {
+                &:not(.dark-logo) {
+                    display: none;
+                }
+                &.dark-logo {
+                    display: block;
+                }
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: $brand-gray;
+                    .isax {
+                        color: $brand-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .card:not(.space) {
+        background-color: #18191c;
+    }
+
+    .card.space {
+        p {
+            color: $gray-400 !important;
+        }
+    }
+
+    .card-title {
+        color: $gray-400 !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $gray-600;
+    }
+
+    .ghost-content {
+        &:after {
+            background-image: linear-gradient(180deg, rgba(24, 25, 28, 0) 0%, #1e2023 100%);
+        }
+    }
+
+    .side-control-menu {
+        border-color: $brand-blue;
+
+        &.active {
+            background-color: $brand-darkBlue !important;
+
+            & > ul {
+                & > li {
+                    & > a {
+                        background-color: $brand-gray !important;
+                    }
+                }
+            }
+            .index-wrapper {
+                background-color: $brand-darkBlue;
+                color: $white;
+                border-color: $brand-blue !important;
+                .index-title {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .coin-header {
+        h1 {
+            color: $brand-blue;
+        }
+    }
+
+    .coin-stats-item {
+        .data-label span.values span {
+            color: $white !important;
+        }
+    }
+    .coin-stats-large .coin-value > strong {
+        color: $white !important;
+    }
+
+    .coin-stats .status-label strong {
+        color: $white !important;
+    }
+    .ghost-box {
+        border-color: $brand-darkBlue;
+    }
+    .data-label span.values span {
+        color: $white !important;
+    }
+
+    .coin-list-head span {
+        color: $white !important;
+    }
+
+    .coin-list-item {
+        .mark-cap,
+        .price,
+        .name > strong,
+        .name > span,
+        .volume > span,
+        .volume > span > span {
+            color: $white !important;
+        }
+    }
+
+    ul.list a,
+    .search-area-title,
+    .rs-container .rs-scale span ins,
+    .user-card strong,
+    .solution-list .solution-item strong,
+    .solution-list .solution-item span,
+    .char-list .list .char-list-item a,
+    .author-info .info .author .desc strong {
+        color: $brand-gray !important;
+    }
+
+    .aside-card,
+    .card.space.white,
+    .user-card,
+    .white-box {
+        background-color: #18191c;
+    }
+
+    .bookmark-btn {
+        [class*="fa-"] {
+            color: $brand-darkBlue !important;
+        }
+    }
+}

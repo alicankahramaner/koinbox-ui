@@ -31,14 +31,14 @@
             textarea(name="comment" cols="30" rows="10") 
             .editor
                 button.bold.selected
-                    span.icon-font-bold
+                    <i class="fa-solid fa-bold"></i>
                 button.italic
-                    span.icon-font-italic
+                    <i class="fa-solid fa-italic"></i>
         .comments-footer
             .left
                 - var btnClass ="comment-more"
                 - var btnText = "Daha Az Yorum"
-                - var btnIcon = "icon-refresh"
+                - var btnIcon = "fa-solid fa-rotate-left"
                 include button.pug
             .right 
                 - var btnClass ="ghost"

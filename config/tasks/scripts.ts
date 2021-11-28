@@ -15,10 +15,9 @@ export const Scripts: ITask = {
     extention: ['*.ts'],
     isWatch: true,
     callBack(cb: any) {
-        src(this.src)
+        return src(this.src)
             .pipe(tsProject().on('error', ErrorHandler))
             .pipe(gulpif(!Config.isProd, uglify()))
             .pipe(dest(this.dest))
-        cb();
     }
 }

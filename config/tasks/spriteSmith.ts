@@ -27,7 +27,8 @@ export const SpriteSmith: ITask = {
         spriteData.css
             .pipe(dest('src/styles/'));
 
-        cb();
+
+        return spriteData;
 
     }
 }

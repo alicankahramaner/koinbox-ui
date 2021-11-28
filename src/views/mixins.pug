@@ -1,7 +1,7 @@
 mixin tagButton(text,iconName,variant)
     a(class="tag-btn "+variant href="#")
         span.logo
-            span(class="icon-"+iconName)
+            span(class="icon "+iconName)
         span= text
 mixin select(placeholder)
     .select 
@@ -10,7 +10,7 @@ mixin select(placeholder)
 mixin button(label,icon,className)
     a(href="#" class="btn " + className) 
         if(icon)
-            span(class="icon-"+icon)
+            i(class=icon)
         if(label)
             span #{label}
 mixin tag(title,className)
@@ -32,7 +32,7 @@ mixin filterCard(tag)
 mixin badge(icon,text)
     .badge
         if(icon)
-            span(class="icon-"+icon)
+            span(class="icon "+icon)
         span= text
 
 mixin buttonRadio(label,name,value,checked)
@@ -52,4 +52,9 @@ mixin percentTag(value,direction)
     span(class='percent-tag '+direction)= value
 mixin percentTagFileld(value,direction)
     span(class='percent-tag filled '+direction)= value
-        
+
+mixin labelSwitch(inputid, label)
+    .label-switch
+        input(type="checkbox" id=inputid)
+        label(for=inputid)=label
+

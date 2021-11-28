@@ -1,6 +1,6 @@
 .search-area {
     background-color: #f2f3f4;
-    padding: 16px;
+    padding: 20px;
     border: 2px solid #dddfe2;
     border-radius: 24px;
     margin-bottom: 25px;
@@ -8,7 +8,7 @@
 
     &-title {
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 18px;
         color: #18203f;
     }
@@ -39,14 +39,16 @@
         color: #898f99;
     }
 
+    // TODO
     &:after {
-        @include sprite($icon-arrow-square-down);
-        display: block;
-        content: "";
+         display: block;
+         color:inherit!important;
+         @include sprite($icon-arrow-square-down);
+         content:''
     }
 
-    @media (max-width:$phoneSize){
-        margin-bottom:10px;
+    @media (max-width: $phoneSize) {
+        margin-bottom: 10px;
     }
 }
 
@@ -60,8 +62,8 @@ textarea {
     font-size: 12px;
     color: #898f99;
     width: 100%;
-    @media (max-width:$phoneSize){
-        margin-bottom:10px;
+    @media (max-width: $phoneSize) {
+        margin-bottom: 10px;
     }
 }
 
@@ -108,8 +110,8 @@ textarea {
                 margin-right: 10px;
             }
 
-            @media(max-width:$phoneSize){
-                margin-bottom:10px;
+            @media (max-width: $phoneSize) {
+                margin-bottom: 10px;
             }
         }
     }
@@ -135,7 +137,7 @@ textarea {
         background-color: #3772ff;
         border: none;
         margin-top: 1px;
-        transition: all ease-in-out .3s!important;
+        transition: all ease-in-out 0.3s !important;
     }
 
     .rs-bg {
@@ -150,7 +152,7 @@ textarea {
         top: 7px !important;
         margin-left: -8px !important;
         border: none;
-        transition: all ease-in-out .3s!important;
+        transition: all ease-in-out 0.3s !important;
 
         &::before,
         &:after {
@@ -158,23 +160,22 @@ textarea {
         }
     }
 
-    &:hover{
-        .rs-pointer{
+    &:hover {
+        .rs-pointer {
             transform: scale(2);
         }
     }
 
-    @media (max-width:$phoneSize) {
-        .rs-pointer{
+    @media (max-width: $phoneSize) {
+        .rs-pointer {
             transform: scale(2.5);
         }
 
-        &:hover{
-            .rs-pointer{
+        &:hover {
+            .rs-pointer {
                 transform: scale(2.5);
             }
         }
-    
     }
 
     .rs-scale {

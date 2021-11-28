@@ -11,8 +11,9 @@
         justify-content: center;
         align-items: center;
 
-        [class*="icon-"] {
+        [class*="fa-"] {
             margin-right: 10px;
+            color: #898f99;
         }
 
         &:last-child {

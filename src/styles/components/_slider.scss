@@ -3,7 +3,7 @@
     display: flex;
     background-color: $white;
     border-radius: $border-radius;
-    padding: 23px 16px;
+    padding:17px;
     position: relative;
     margin-bottom: 15px;
     justify-content: center;
@@ -40,7 +40,7 @@
         flex: 1 0 auto;
         float: left;
         color: #898f99;
-        font-size: 14px;
+        font-size: 12px;
 
         &:not(:last-child) {
             &:after {

@@ -15,15 +15,14 @@ export let Views: ITask = {
     extention: ['/**/*.pug'],
     isWatch: true,
     callBack(cb: any) {
-        src(this.src)
-            .pipe(data(function (file: any) {
-                return JSON.parse(fs.readFileSync(path.join(process.cwd(), Config.src, 'data.json')))
-            }))
+        return src(this.src)
+            // .pipe(data(function (file: any) {
+            //     return JSON.parse(fs.readFileSync(path.join(process.cwd(), Config.src, 'data.json')))
+            // }))
             .pipe(pug({
-                pretty: true,
+                pretty: false,
                 compileDebug: Config.views.debug,
             }).on('error', ErrorHandler))
             .pipe(dest(this.dest))
-        cb();
     }
 }

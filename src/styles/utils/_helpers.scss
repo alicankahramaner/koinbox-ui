@@ -26,6 +26,10 @@
 
 .ghost-content {
     position: relative;
+    font-size: 14px;
+    p{
+        font-size: 14px;
+    }
     &:after {
         content: "";
         display: block;
@@ -58,8 +62,9 @@
 
 .aside-title {
     font-weight: bold;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 17px;
+    line-height: 21px;
+    padding:0px 10px;
     color: $brand-darkBlue;
     margin-bottom: 32px;
 }

@@ -9,7 +9,7 @@
         position: sticky;
         top: 0;
         // padding-left: 0.75rem;
-        // padding-top: 24px;
+        padding-top: 24px;
         transition: all ease-in-out 0.3s;
         z-index: $layoutLeftZindex;
     }
@@ -19,6 +19,9 @@
         flex-basis: 100%;
         & > .container-fluid{
             width: 95%;
+            @media (max-width:$phoneSize) {
+                width: 100%;
+            }
         }
     }
 

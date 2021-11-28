@@ -23,9 +23,9 @@
                 margin-bottom: 10px;
             }
             figure {
-                width: 44px;
+                width: 34px;
                 margin: 0 12px 0 0;
-                height: 44px;
+                height: 34px;
                 border-radius: 100%;
                 overflow: hidden;
                 img {
@@ -39,14 +39,14 @@
                     display: block;
                 }
                 strong {
-                    font-weight: bold;
+                    font-weight: 600;
                     color: $brand-darkBlue;
-                    font-size: 16px;
+                    font-size: 14px;
                 }
 
                 span {
                     font-weight: 500;
-                    font-size: 14px;
+                    font-size: 13px;
                     color: $brand-gray;
                 }
             }
@@ -58,6 +58,15 @@
             @media (max-width: $phoneSize) {
                 margin-bottom: 10px;
             }
+            .badge{
+                padding:10px;
+                margin-right: 10px;
+
+                [class*=fa-]{
+                    font-size:10px;
+                    margin-right: 10px;
+                }
+            }
         }
     }
 
@@ -65,7 +74,7 @@
         border: 2px solid #dddfe2;
         border-radius: $border-radius;
         display: inline-flex;
-        padding: 10px 21px;
+        padding: 12px 16px;
         justify-content: center;
         align-items: center;
         margin-left: 16px;
@@ -75,12 +84,16 @@
             &:hover {
                 transform: scale(1.1);
             }
+
+            [class*="fa-"] {
+                color: $brand-darkBlue;
+            }
         }
     }
 }
 
 .badge {
-    border: 2px solid $brand-gray;
+    border: 2px solid #dddfe2;
     padding: 5px 8px;
     font-weight: 500;
     font-size: 14px;
@@ -93,6 +106,13 @@
 
     [class*="icon-"] {
         margin-right: 5px;
+    }
+    span{
+        &:last-child{
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 10px;
+        }
     }
 }
 
@@ -154,13 +174,18 @@
     border-radius: $border-radius;
     background-color: $white;
     margin: 32px 0px;
+    .emoji-list{
+        .emoji{
+            margin-right: 24px;
+        }
+    }
     .emoji-comment {
         & > span {
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             color: $brand-darkBlue;
             display: block;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
     }
 
@@ -168,7 +193,7 @@
         margin-bottom: 23px;
         & > span {
             font-weight: 600;
-            font-size: 18px;
+            font-size: 17px;
             color: $brand-darkBlue;
             line-height: 18px;
             position: relative;
@@ -183,6 +208,10 @@
                 right: -20px;
                 top: -5px;
             }
+        }
+
+        .count{
+            top:0;
         }
 
         .writer {
@@ -246,10 +275,10 @@
                 padding-left: 14px;
                 li {
                     position: relative;
-                    padding-left: 56px;
+                    padding-left: 46px;
                     img {
-                        width: 44px;
-                        height: 44px;
+                        width: 34px;
+                        height: 34px;
                         border-radius: 100%;
                         position: absolute;
                         top: 0;
@@ -258,14 +287,14 @@
 
                     span {
                         display: block;
-                        font-size: 14px;
-                        font-weight: 500;
+                        font-size: 13px;
+                        font-weight: 400;
                         color: #898f99;
                         &.name {
                             font-weight: 600;
-                            font-size: 16px;
+                            font-size: 14px;
                             color: #18203f;
-                            margin-bottom: 8px;
+                            margin-bottom: 0px;
                         }
                     }
                 }
@@ -303,10 +332,10 @@
     &-content {
         margin-right: 80px;
         h1 {
-            font-size: 36px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: 700;
             color: $brand-darkBlue;
-            line-height: 44px;
+            line-height: 34px;
             margin-bottom: 24px;
         }
 
@@ -316,8 +345,8 @@
 
         p {
             font-weight: 500;
-            font-size: 21px;
-            line-height: 28px;
+            font-size: 14px;
+            line-height: 24px;
             color: #898f99;
             margin-bottom: 31px;
         }
@@ -330,7 +359,7 @@
         flex-shrink: 0;
         overflow: hidden;
         margin: 0;
-        min-height: 440px;
+        min-height: 380px;
 
         @media (max-width: $phoneSize) {
             display: none;
@@ -368,12 +397,12 @@
 
 // Alert
 .alert {
-    padding: 24px;
+    padding: 20px;
     display: block;
     border: 2px solid transparent;
     color: $brand-darkBlue;
-    font-weight: 600;
-    font-size: 18px;
+    font-weight: 500;
+    font-size: 14px;
     margin: 24px 0px;
     border-radius: $border-radius;
     background-color: $white;
@@ -412,7 +441,7 @@
 
 // User Menu
 .user-menu {
-    padding: 8px;
+    padding: 6px;
     background-color: $white;
     border-radius: 12px;
     position: relative;
@@ -428,6 +457,9 @@
         a {
             text-decoration: none;
             display: inline-block;
+            [class*="fa-"] {
+                color: $brand-darkBlue;
+            }
             img {
                 width: 24px;
                 height: 24px;
@@ -457,6 +489,7 @@
             }
             & > a {
                 display: flex;
+                align-items: center;
                 &.active {
                     z-index: 20;
                     position: relative;
@@ -513,7 +546,7 @@
 // Share Menu
 
 .side-control-menu {
-    padding: 16px;
+    padding: 16px 6px;
     border: 2px solid #dddfe2;
     border-radius: $border-radius;
     margin-bottom: 24px;
@@ -534,10 +567,15 @@
                 margin: 0px auto;
                 justify-content: center;
                 align-items: center;
-                width: 48px;
-                height: 48px;
+                width: 40px;
+                text-decoration: none;
+                height: 40px;
                 &:hover {
                     border-color: $brand-blue;
+                }
+
+                [class*="fa-"] {
+                    color: $brand-darkBlue;
                 }
             }
             &.more-item {
@@ -611,14 +649,40 @@
                 }
             }
         }
+    }
+}
+
+.side-control-menu {
+    position: relative;
+    &.active {
         .index-wrapper {
             position: absolute;
             opacity: 1;
-
             z-index: -1;
+            display: block;
+        }
+
+        background-color: $white;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+
+        & > ul {
+            z-index: 3;
+            position: relative;
+            & > li {
+                & > a {
+                    border-color: #f2f3f4;
+                    background-color: #f2f3f4;
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
+
 .index-wrapper {
     list-style: decimal;
     position: absolute;
@@ -626,8 +690,8 @@
     max-width: 100vw;
     min-width: 350px;
     overflow: hidden;
+    display: none;
     z-index: -1000;
-    border: 1px solid red;
     top: -2px;
     right: 100%;
     opacity: 0;
@@ -679,7 +743,7 @@
 .user-card {
     display: flex;
     flex-direction: column;
-    padding: 32px;
+    padding: 20px;
     border-radius: $border-radius;
     background-color: $white;
     margin-bottom: 24px;
@@ -720,8 +784,8 @@
     }
 
     span {
-        font-weight: 500;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 14px;
         line-height: 24px;
         color: #898f99;
     }
@@ -784,11 +848,12 @@
     span {
         font-weight: 500;
         color: #898f99;
-        font-size: 16px;
+        font-size: 13px;
         position: absolute;
         cursor: inherit;
         z-index: -1;
         transition: all ease-in-out 0.3s;
+        padding:10px 16px;
     }
 }
 
@@ -809,7 +874,7 @@
         }
         & > span {
             font-weight: bold;
-            font-size: 24px;
+            font-size: 19px;
             line-height: 24px;
             color: $brand-darkBlue;
         }
@@ -840,6 +905,12 @@
                 flex-basis: 50%;
                 font-size: 18px;
             }
+        }
+    }
+
+    .coin-compare-convert {
+        [class*="fa-"] {
+            color: $brand-gray;
         }
     }
 
@@ -969,7 +1040,7 @@
     a {
         text-decoration: unset;
         font-weight: 500;
-        font-size: 16px;
+        font-size: 13px;
         color: #898f99;
         padding: 7px 5px;
         display: block;
@@ -1041,6 +1112,9 @@
     appearance: none;
     border: none;
     background-color: $white;
+    [class*=fa-]{
+        color:$brand-darkBlue!important;
+    }
 }
 
 .map-frame {
@@ -1159,17 +1233,17 @@
     .list {
         flex-basis: 100%;
         .char-list-item {
-            padding: 24px 30px;
+            padding: 20px;
             border-radius: 24px;
             border: 2px solid #dddfe2;
             margin-bottom: 18px;
             a {
                 color: $brand-darkBlue;
                 text-decoration: none;
-                font-size: 21px;
+                font-size: 17px;
                 font-weight: bold;
                 line-height: 21px;
-                margin-bottom: 16px;
+                margin-bottom: 12px;
                 display: block;
                 transition: all ease-in-out 0.3s;
                 &:hover {
@@ -1179,10 +1253,11 @@
             }
 
             p {
-                font-weight: 500;
-                font-size: 18px;
-                line-height: 28px;
+                font-weight:400;
+                font-size: 14px;
+                line-height: 24px;
                 color: #898f99;
+                margin-bottom: 0;
             }
         }
     }
@@ -1395,7 +1470,23 @@
 .coin-stats {
     display: grid;
     width: 100%;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding:20px;
+    grid-template-columns: 1fr 1.2fr 1.2fr 1.2fr;
+
+    .coin-stats-item{
+        .data-label{
+            & > span{
+                &:first-child{
+                    font-size:12px;
+                }
+
+                &:last-child{
+                    padding:5px 0px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 
     @media (max-width: $phoneSize) {
         display: flex;
@@ -1410,6 +1501,8 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
+
+                
             }
         }
     }
@@ -1452,10 +1545,13 @@
 
     &-item {
         margin: 0px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &-box {
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         padding: 7px;
     }
@@ -1486,6 +1582,13 @@
         .btn {
             padding: 12px 24px;
             margin-right: 16px;
+            padding:10px 16px;
+            font-size: 13px;
+            font-weight: 600;
+
+            &.active{
+                border-color: transparent;
+            }
         }
 
         @media (max-width: $phoneSize) {
@@ -1710,8 +1813,8 @@
 }
 
 .read-progress {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     margin: 0px auto;
     position: relative;
     border-radius: 100%;
@@ -1719,7 +1822,7 @@
     justify-content: center;
     align-items: center;
     $progress-bar-stroke-width: 2;
-    $progress-bar-size: 60px;
+    $progress-bar-size: 48px;
 
     svg {
         height: $progress-bar-size;
@@ -1744,8 +1847,8 @@
     }
     img {
         position: absolute;
-        width: 44px;
-        height: 44px;
+        width: 34px;
+        height: 34px;
     }
 }
 
@@ -1826,7 +1929,6 @@
     }
 }
 
-
 button.hamburger {
     background: none;
     border: none;
@@ -1859,12 +1961,12 @@ button.hamburger {
     &:after {
         margin-top: 5px;
     }
-    @media (max-width:$phoneSize) {
+    @media (max-width: $phoneSize) {
         display: flex;
     }
 }
 
-.menu-collapsed{
+.menu-collapsed {
     .hamburger {
         &:before {
             transform: rotate(-45deg);
@@ -1875,5 +1977,77 @@ button.hamburger {
             transform: rotate(45deg);
             margin: 0;
         }
+    }
+}
+
+.dummy-ads {
+    border-radius: $border-radius;
+    background-color: $brand-blue;
+    height: 130px;
+    margin-top: 48px;
+}
+
+.fixed-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    &-wrapper {
+        top: 0;
+        position: sticky;
+        left: 0;
+    }
+}
+
+.ghost-title {
+    padding-left: 0;
+}
+
+.kunye-box {
+    align-items: center;
+    justify-content: center;
+    a {
+        position: absolute;
+        bottom: 20px;
+        width: 90%;
+    }
+}
+
+.label-switch {
+    display: inline-flex;
+    align-items: center;
+
+    input[type="checkbox"] {
+        width: 55px;
+        height: 28px;
+        padding: 4px;
+        position: relative;
+        appearance: none;
+        display: inline-flex;
+        align-items: center;
+        border-radius: $border-radius;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            right: 28px;
+            position: absolute;
+            background-color: $brand-darkBlue;
+            border-radius: 100%;
+            transition: all ease-in-out 0.3s;
+        }
+
+        &:checked {
+            &::after {
+                right: 4px;
+                background-color: $brand-blue;
+            }
+        }
+    }
+
+    label {
+        margin-left: 10px;
+        font-size: 14px;
     }
 }

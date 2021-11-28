@@ -1,4 +1,5 @@
-extends components/layout.pug 
+//- extends components/layout.pug 
+extends components/layoutTwoCol.pug 
 block content
   .row 
     .col-sm-12.col-lg-6
@@ -8,9 +9,6 @@ block content
       include components/card.pug
       include components/card.pug
       include components/card.pug
-  .row
-    .col-12
-      .dummy-ads
   .card-row
     .row 
       .col-12
@@ -32,17 +30,6 @@ block content
       include components/cardWideEditor.pug
       include components/cardWide.pug
       include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
-      include components/cardWide.pug
       .col-12 
         - var btnClass ="more"
         - var btnText = "Daha Fazla Göster"
@@ -50,10 +37,8 @@ block content
         include components/button.pug
     // Ads Side
     .col-12.col-lg-3
-      .fixed-area
-        .fixed-area-wrapper
-          img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
-          img(src="/resources/images/adsLong.png" alt="" class="img-responsive")
+      img(src="/resources/images/adsBox.png" class="img-responsive" alt="")
+      img(src="/resources/images/adsLong.png" alt="" class="img-responsive")
   .row 
     .col-12 
       include components/koinboxVideo.pug
@@ -73,17 +58,17 @@ block content
               +tagButton("ColdWallet Nedir?","icon icon-wallet","blue")
   // SpaceCardBigs
   .row
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
-    .col-12.col-lg-4
+    .col-12.col-lg-3
       include components/spaceCardBig.pug
   .row
     .content-card 
@@ -105,8 +90,8 @@ block content
                 .col-12.col-lg-2
                   +select("Sırala")
                 .col-12.col-lg-2.content-right
-                  +button(null,'fa-solid fa-caret-left','form')
-                  +button(null,'fa-solid fa-caret-right','form')
+                  +button(null,'arrow-square-right','form')
+                  +button(null,'arrow-square-left','form')
         .row
           .col-12.col-lg-4
             include components/coinVote.pug
@@ -167,7 +152,5 @@ block content
         p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat, minus asperiores distinctio vel perferendis placeat non officia, possimus cum odio quam quisquam maiores quidem! Ab quaerat ex explicabo omnis facilis.
       +button("Daha Fazla Göster","fa-solid fa-rotate-left")
 block append Side
-  include components/sideShare.pug
+  include components/sideEmoji.pug
   include components/sideRead.pug
-  include components/sideIndex.pug
-  include components/sideSettings.pug

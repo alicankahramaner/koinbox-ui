@@ -8,11 +8,11 @@ import { IconFont } from './tasks/iconFont';
 import { Vendors } from './tasks/vendors';
 
 const Tasks = [
-    Styles,
     Views,
-    Scripts,
-    Image,
     SpriteSmith,
+    Image,
+    Styles,
+    Scripts,
     Font,
     Vendors
     // IconFont

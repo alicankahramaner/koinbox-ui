@@ -2,11 +2,13 @@
     margin-bottom: 18px;
     text-decoration: none;
     display: block;
+    padding-left: 10px;
+    padding-right: 10px;
     &-title {
         margin: 0;
         padding: 0;
         font-weight: 600;
-        font-size: 16px;
+        font-size: 13px;
         color: $brand-darkBlue;
         line-height: 21px;
         transition: all ease-in-out 0.3s;

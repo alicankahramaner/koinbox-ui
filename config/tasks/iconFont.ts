@@ -20,7 +20,7 @@ export const IconFont: ITask = {
     extention: ['*.svg'],
     isWatch: true,
     callBack(cb: any) {
-        src(this.src)
+        return src(this.src)
             .pipe(iconfontCss({
                 fontName: fontName,
                 path: 'node_modules/gulp-iconfont-css/templates/_icons.scss',
@@ -33,6 +33,5 @@ export const IconFont: ITask = {
             //     fontName: fontName
             // }))
             .pipe(dest('src/resources/fonts'));
-            cb()
     }
 }

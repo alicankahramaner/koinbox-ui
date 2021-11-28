@@ -1,5 +1,11 @@
-.side-control-menu
+include ../mixins.pug
+.side-control-menu#settings-menu
     ul
         li 
-            a(href="#") 
-                span.icon-s-settings
+            a(href="#" data-target="#settings-menu").active-toggle
+                <i class="fa-solid fa-sliders"></i>
+    div.index-wrapper
+        span.index-title Ayarlar
+        ul
+            li
+                +labelSwitch('themeSwitch','Koyu Tema')

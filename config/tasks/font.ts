@@ -11,8 +11,7 @@ export const Font: ITask = {
     extention: ['*.*'],
     isWatch: true,
     callBack(cb: any) {
-        src(this.src)
+        return src(this.src)
             .pipe(dest(this.dest))
-        cb();
     }
 }

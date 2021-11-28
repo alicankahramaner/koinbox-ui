@@ -366,6 +366,42 @@ class ReadProgress implements ModuleType {
     }
 }
 
+class ThemeSwitch implements ModuleType {
+    selector: string = 'body';
+
+    init() {
+        let sw = document.querySelector('#themeSwitch');
+        if(sw){
+            sw.addEventListener('change', this.changeTheme.bind(this))
+        }
+        this.initTheme()
+    }
+
+    changeTheme(e: any) {
+        let checkbox: HTMLInputElement = e.target;
+        if (!checkbox) return;
+        this.setDark(checkbox.checked);
+    }
+
+    setDark(isDark: boolean) {
+        let switchBtn: HTMLInputElement = document.querySelector(this.selector);
+        if (isDark) {
+            document.body.classList.add('dark');
+            localStorage.setItem('darkTheme', 'true')
+        } else {
+            document.body.classList.remove('dark');
+            localStorage.removeItem('darkTheme')
+        }
+        if (!switchBtn) return;
+        switchBtn.checked = isDark
+    }
+
+    initTheme() {
+        let val = localStorage.getItem('darkTheme');
+        this.setDark(val ? true : false)
+    }
+}
+
 // Init App
 const app = new App([
     new MenuCollapseModule(),
@@ -378,5 +414,6 @@ const app = new App([
     new PhoneInput(),
     new CharFilter(),
     new TabModule(),
-    new ActiveToggleTarget()
+    new ActiveToggleTarget(),
+    new ThemeSwitch()
 ])

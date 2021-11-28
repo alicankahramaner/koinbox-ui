@@ -25,13 +25,12 @@ export let Styles: ITask = {
             postcssPlugins.push(csso())
         }
 
-        src(this.baseFile)
+        return src(this.baseFile)
             .pipe(gulpif(Config.styles.sourcemaps, sourcemaps.init()))
             .pipe(sass().on('error', sass.logError))
             .pipe(postcss(postcssPlugins))
             .pipe(stripCssComments())
             .pipe(gulpif(Config.styles.sourcemaps, sourcemaps.write('.')))
             .pipe(dest(this.dest));
-        cb();
     }
 }
